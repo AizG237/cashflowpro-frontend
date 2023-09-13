@@ -1,0 +1,145 @@
+body{
+    font-size: 14px;
+    background-color: #000;
+}
+
+.main{
+width: 100%;
+height: 100%;
+}
+.maincontent{
+background-color:#105a39a9 ;
+padding: 12px;
+margin:auto;
+min-width: 600px;
+}
+  .maincontent .maintitle{
+    background-color: #105A39;
+    margin:auto;
+    width: 100%;
+    min-width: 600px;
+    padding: 20px;
+    text-align: left;
+  }
+  .maintitle span{
+    color: #01180e;
+    font-size: 22px;
+  }
+  .maintitle h2{
+    color: #35795bcc;
+    margin:o0;
+    line-height: 20px;
+  }
+.card{
+    --bs-card-bg:#fff;
+    min-width: 700px;
+    border:none;
+    width: 90%;
+    position: relative;
+    margin:7% auto;
+    padding-bottom: 20px;
+  }
+  .nav{
+    --bs-nav-link-hover-color:#885305d7;
+    --bs-nav-link-color:#885305d7;
+  }
+  .nav-pills{
+  
+    display:table !important;
+    width:100%;
+    cursor: default;
+  }
+  .nav-pills .nav-link.active{
+    background-color: #105a39c9;
+  }
+  .nav-pills .nav-link {
+      border-radius: 0px;
+          border-bottom: 1px solid #C47A0D;
+  }
+  .nav-item{
+        display: table-cell;
+         background: #e19c34a1;
+  }
+  .form{
+    padding: 10px;
+   min-height: 300px;
+   height: 100%;
+  }
+  .formcont1{
+    /* height: 300px; */
+    width: 80%;
+    margin: auto;
+    /* background-color: #C47A0D; */
+    padding: 15px 10px;
+  }
+  .headform{
+    background-color: #0b5a378c;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-bottom: dashed 1px #01180e;
+  }
+  .headform h3{
+    text-align: center;
+    margin: 0;
+  }
+  .headform p{
+    margin: 0px 0px 8px 0px;
+    line-height: 18px;
+  }
+  .headform p span{
+    font-weight: 700;
+  }
+  .formcont1 .formcontn{
+    /* background-color: #cc84bc; */
+    padding: 10px;
+    margin-top: 10px auto;
+  }
+  .formcont1 label,.modal-body label{
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: 10px;
+  }
+  .form-control,.form-select{
+    width: 300px;
+    display: inline-block;
+    margin: 2px 15px;
+  }
+  #motif{
+    position: relative;
+    left: 75px;
+  }
+  .form input{
+    border-radius: 5px;
+    margin: 0 auto 12px 5px;
+  }
+  .form input:focus{
+    box-shadow: none;
+  }
+  .modal-header{
+    background-color:#a86807e5 ;
+    color: #fff;
+}
+.modal{
+  margin-top: 10%;
+  /* width: 400px; */
+}
+
+.modal-body .btn-primary{
+    background-color:#002F1B ;
+    color: #fff;
+    border: none;
+    --bs-btn-active-border-color:#01180e;
+}
+.modal-body .btn-primary:hover{
+    background-color:#01180e ;
+}
+
+  .form button{
+    margin:20px 5px 5px 5px ;
+  }
+  thead th{
+    color: #01180e;
+    background-color: #105a3969;
+  }

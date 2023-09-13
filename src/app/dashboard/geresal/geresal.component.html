@@ -1,0 +1,156 @@
+<section class="main">
+    <div class="maincontent">
+        <div class="maintitle">
+            <h2>Liste paiement salaire</h2>
+        </div>
+        <div class="bloctables">
+            <div class="card">
+
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item text-center">
+                      <a class="nav-link active btl" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Liste des paiement actifs</a>
+                    </li>
+                    <li class="nav-item text-center">
+                      <a class="nav-link btr" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Liste des paiement suspendus</a>
+                    </li>
+                   
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                        <div class="form px-4 pt-5">
+
+                            <table class="table table-bordered" data-toggle="table" data-search="true" data-pagination="true">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">Noms</th>
+                                        <th scope="col">Prénom</th>
+                                        <th scope="col">Poste</th>
+                                        <th scope="col">Salaire</th>
+                                        <th scope="col">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                        <td>@mdo</td>
+                                        <td>
+                                            <!-- Button trigger modal 1-->
+                                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            <i class="bi bi-trash-fill"></i>
+                                            </button>
+                                            
+                                            <!-- Modal 1-->
+                                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog verif">
+                                                <div class="modal-content ">
+                                                    <div class="modal-body">
+                                                        <p>Etes-vous sûr de vouloir suspendre ce paiement ?</p>
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Non</button>
+                                                    <button type="button" class="btn btn-success"data-bs-dismiss="modal">Oui</button>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Button trigger modal 2-->
+                                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModa"><i class="bi bi-pencil-square"></i>
+                                            </button>
+                                            <!-- Modal 2-->
+                                            <div class="modal fade" id="exampleModa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog salaire">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Modification du salaire</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form action="">
+                                                            <input type="number" formControlName="entier"  placeholder="xxxxxxx" class="form-control" required><br>
+                                                            <button type="submit" class="btn btn-success">Valider</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        </tr>
+
+  
+                                            
+                                        <!-- <tr>
+                                        <th scope="row">3</th>
+                                        <td colspan="2">Larry the Bird</td>
+                                        <td>@twitter</td>
+                                        </tr> -->
+                                    </tbody>
+                                    </table>
+                            </table>
+
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        <div class="form px-4 pt-5">
+        
+                            <table class="table table-bordered" data-toggle="table" data-search="true" data-pagination="true">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">Noms</th>
+                                        <th scope="col">Prénom</th>
+                                        <th scope="col">Poste</th>
+                                        <th scope="col">Salaire</th>
+                                        <th scope="col">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                        <td>@mdo</td>
+                                        <td>
+                                            <!-- Button trigger modal 1-->
+                                            <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleMdal">Réactiver
+                                            </button>
+                                            
+                                            <!-- Modal 1-->
+                                            <div class="modal fade" id="exampleMdal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog verif">
+                                                <div class="modal-content ">
+                                                    <div class="modal-body">
+                                                        <p>Voulez-vous réactiver ce salaire ?</p>
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Non</button>
+                                                    <button type="button" class="btn btn-success"data-bs-dismiss="modal">Oui</button>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        </tr>
+                                        <!-- <tr>
+                                        <th scope="row">3</th>
+                                        <td colspan="2">Larry the Bird</td>
+                                        <td>@twitter</td>
+                                        </tr> -->
+                                    </tbody>
+                                </table>
+                            </table>
+                            
+                        </div>
+                    </div>
+                
+                </div>
+              
+            </div>
+        </div>
+    </div>
+</section>
