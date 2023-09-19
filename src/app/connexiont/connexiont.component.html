@@ -11,17 +11,20 @@
                 <li class="nav-item text-center">
                   <a class="nav-link btr" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Inscription</a>
                 </li>
-               
+
               </ul>
               <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                  
-                  <div class="forml px-4 pt-5">
 
-                    <input type="email" name="" class="form-control" placeholder="Email">
-                    <input type="password" name="" class="form-control" placeholder="Password">
-                    <button class="btn btn-dark btn-block">Login</button><br><br>
-                    <a href="">Mot de pass oublié ?</a>
+                  <div class="forml px-4 pt-5" >
+
+                   <form role="form" (ngSubmit) = "OnSubmit()">
+                    <input type="email" name="email" class="form-control" placeholder="Email" id="email" [(ngModel)] = "authRequest.email" [ngModelOptions]="{standalone:true}" >
+                     <input type="password" name="password" class="form-control" placeholder="Password"  [(ngModel)] = "authRequest.password" [ngModelOptions]="{standalone:true}">
+                      
+                    <button type="submit" class="btn btn-dark btn-block">Login</button><br><br>
+                     <a href="">Mot de pass oublié ?</a>
+                   </form>
                     <!-- <img src="/../../assets/images/money.webp" alt=""> -->
                   </div>
 
@@ -29,7 +32,7 @@
 
                 </div>
                 <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                  
+
 
                   <div class="formi px-4">
                     <div class="coln1">
@@ -47,25 +50,25 @@
                     <input type="password" name="" class="form-control" placeholder="Password">
                     <input type="password" name="" class="form-control" placeholder="confirmation password">
                     <div class="file-upload">
-                      <i class="fas fa-upload"></i>&nbsp; choisir fichier 
+                      <i class="fas fa-upload"></i>&nbsp; choisir fichier
                       <div class="load"><input type="file" required name="autori">
                       </div>
                     </div>
-                    
+
                     </div><br>
                     <button class="btn btn-dark btn-block">Signup</button>
-                    
+
 
                   </div>
 
 
 
                 </div>
-                
+
                </div>
-          
+
         </div>
-        
+
 
       </div>
 </section>
