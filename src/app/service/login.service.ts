@@ -6,21 +6,8 @@ import { AuthRequest } from '../modele/auth-request';
   providedIn: 'root'
 })
 export class LoginService {
-    //appURL = enviroment.baseUrl;
-
-     
-
+    //appURL = enviroment.baseUrl
   constructor(private http : HttpClient) { }
-  
-
-
-  // public loginService (password : any, email: any) : Observable<any>{
-  //   return this.http.post<any>(`${this.appURL}/auth/authenticate`,{
-  //     email,
-  //     password
-  //   })
-  // }
-
   login(authRequest : AuthRequest){
     const httpOptions ={
       headers: new HttpHeaders({
@@ -28,7 +15,7 @@ export class LoginService {
 
       }),
     }
-    console.log("Auth service "+authRequest.password);
+    console.log("Le service d'authentification retourne  "+authRequest.password+authRequest.email);
     return this.http.post('http://localhost:8080/auth/authenticate', authRequest, httpOptions).pipe(); 
   }
 }

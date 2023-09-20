@@ -18,9 +18,12 @@
 
                   <div class="forml px-4 pt-5" >
 
-                   <form role="form" (ngSubmit) = "OnSubmit()">
-                    <input type="email" name="email" class="form-control" placeholder="Email" id="email" [(ngModel)] = "authRequest.email" [ngModelOptions]="{standalone:true}" >
-                     <input type="password" name="password" class="form-control" placeholder="Password"  [(ngModel)] = "authRequest.password" [ngModelOptions]="{standalone:true}">
+                   <form role="form" (ngSubmit)= "OnSubmit()" FormGroup="loginForm">
+                    <div class="col-md-4">
+                    <label for="validationDefault01" class="form-label"></label>
+                    <input type="email" name="email" class="form-control" placeholder="Email" id="validationCustom01" [(ngModel)] = "authRequest.email" [ngModelOptions]="{standalone:true}" required FormControlName = "email" required></div>
+
+                     <input type="password" name="password" class="form-control" placeholder="Password"  [(ngModel)] = "authRequest.password" [ngModelOptions]="{standalone:true}" required FormControlName = "password">
                       
                     <button type="submit" class="btn btn-dark btn-block">Login</button><br><br>
                      <a href="">Mot de pass oublié ?</a>
@@ -32,22 +35,28 @@
 
                 </div>
                 <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-
+                  <form (ngSubmit) ="OnRegist()">
 
                   <div class="formi px-4">
                     <div class="coln1">
-                      <input type="text" name="" class="form-control" placeholder="Nom">
-                    <input type="text" name="" class="form-control" placeholder="Prenom">
-                    <input type="date" name="" class="form-control" placeholder="Date de naissance">
+                      <input type="text" name="" class="form-control" placeholder="Nom" [(ngModel)]= "regist.firstname"
+                      [ngModelOptions]="{standalone:true}">
+                    <input type="text" name="" class="form-control" placeholder="Prenom"  [(ngModel)]= "regist.lastname"
+                    [ngModelOptions]="{standalone:true}">
+                    <input type="date" name="" class="form-control" placeholder="Date de naissance"  [(ngModel)]= "regist.datenaiss"
+                    [ngModelOptions]="{standalone:true}">
                     <input type="text" name="" class="form-control" placeholder="Profession">
                     <input type="text" name="" class="form-control" placeholder="Pays de residence">
                     <input type="text" name="" class="form-control" placeholder="Ville">
                     </div>
                     <div class="coln2">
                       <input type="text" name="" class="form-control" placeholder="Boite postale">
-                    <input type="email" name="" class="form-control" placeholder="Email">
-                    <input type="text" name="" class="form-control" placeholder="Tel">
-                    <input type="password" name="" class="form-control" placeholder="Password">
+                    <input type="email" name="" class="form-control" placeholder="Email"  [(ngModel)]= "regist.email"
+                    [ngModelOptions]="{standalone:true}">
+                    <input type="text" name="" class="form-control" placeholder="Tel"  [(ngModel)]= "regist.telephone"
+                    [ngModelOptions]="{standalone:true}">
+                    <input type="password" name="" class="form-control" placeholder="Password"  [(ngModel)]= "regist.password"
+                    [ngModelOptions]="{standalone:true}">
                     <input type="password" name="" class="form-control" placeholder="confirmation password">
                     <div class="file-upload">
                       <i class="fas fa-upload"></i>&nbsp; choisir fichier
@@ -56,12 +65,12 @@
                     </div>
 
                     </div><br>
-                    <button class="btn btn-dark btn-block">Signup</button>
+                    <button class="btn btn-dark btn-block" type="submit">Signup</button>
 
 
                   </div>
 
-
+                  </form>
 
                 </div>
 
