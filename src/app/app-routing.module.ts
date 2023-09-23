@@ -15,7 +15,7 @@ import { ConnexiontComponent } from './connexiont/connexiont.component';
 
 const routes: Routes = [
   {path: 'connexiont', component : ConnexiontComponent},
-  {path:'' ,component : GeresalComponent},
+  {path:'' ,component : ConnexiontComponent},
   {path:'header' ,component : HeaderComponent},
   {path:'gerefac' ,component : GerefacComponent},
   {path:'gerepi' ,component : GerepiComponent},

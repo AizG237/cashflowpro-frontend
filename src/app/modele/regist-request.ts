@@ -5,4 +5,5 @@ export class RegistRequest {
     password!:string;
     datenaiss!:Date;
     telephone!:number;
+    confpass!: string;
 }
