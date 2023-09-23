@@ -18,10 +18,9 @@
 
                   <div class="forml px-4 pt-5" >
 
-                   <form role="form" (ngSubmit)= "OnSubmit()" FormGroup="loginForm">
-                    <div class="col-md-4">
-                    <label for="validationDefault01" class="form-label"></label>
-                    <input type="email" name="email" class="form-control" placeholder="Email" id="validationCustom01" [(ngModel)] = "authRequest.email" [ngModelOptions]="{standalone:true}" required FormControlName = "email" required></div>
+                   <form role="form" (ngSubmit)= "OnSubmit()">
+                    
+                    <input type="email" name="email" class="form-control" placeholder="Email" [(ngModel)] = "authRequest.email" [ngModelOptions]="{standalone:true}" required FormControlName = "email" required>
 
                      <input type="password" name="password" class="form-control" placeholder="Password"  [(ngModel)] = "authRequest.password" [ngModelOptions]="{standalone:true}" required FormControlName = "password">
                       

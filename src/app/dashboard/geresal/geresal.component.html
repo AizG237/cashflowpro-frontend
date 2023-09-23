@@ -40,13 +40,13 @@
                                         <td>@mdo</td>
                                         <td>@mdo</td>
                                         <td>
-                                            <!-- Button trigger modal 1-->
-                                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            <!-- Button supprim-->
+                                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#suppri">
                                             <i class="bi bi-trash-fill"></i>
                                             </button>
                                             
-                                            <!-- Modal 1-->
-                                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <!-- Modal supprim-->
+                                            <div class="modal fade" id="suppri" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog verif">
                                                 <div class="modal-content ">
                                                     <div class="modal-body">
@@ -58,11 +58,27 @@
                                                 </div>
                                             </div>
                                             
-                                            <!-- Button trigger modal 2-->
-                                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModa"><i class="bi bi-pencil-square"></i>
+                                            <!-- Button edit-->
+                                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#edit"><i class="bi bi-pencil-square"></i>
                                             </button>
-                                            <!-- Modal 2-->
-                                            <div class="modal fade" id="exampleModa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <!-- Modal edit-->
+                                            <div class="modal fade" id="edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog salaire">
+                                                <div class="modal-content ">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Modification du salaire</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                    <div class="modal-body">
+                                                        <form>
+                                                            <input type="number"  placeholder="Montant" class="form-control" required><br>
+                                                            <button type="submit" class="btn btn-success">Valider</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="modal fade" id="edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog salaire">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
@@ -77,7 +93,7 @@
                                                     </div>
                                                 </div>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                         </td>
                                         </tr>
 
@@ -89,7 +105,7 @@
                                         <td>@twitter</td>
                                         </tr> -->
                                     </tbody>
-                                    </table>
+                                </table>
                             </table>
 
                         </div>
