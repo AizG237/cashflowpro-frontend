@@ -11,6 +11,9 @@ import { GeresalComponent } from './dashboard/geresal/geresal.component';
 import { CmptempComponent } from './dashboard/cmptemp/cmptemp.component';
 import { FormsModule } from '@angular/forms';
 import { ConnexiontComponent } from './connexiont/connexiont.component';
+import{CashfoncComponent} from './dashboard/cashfonc/cashfonc.component';
+import{SantefinComponent} from './dashboard/santefin/santefin.component';
+// import { GereinvComponent } from './dashboard/gereinv/gereinv.component';
 
 
 const routes: Routes = [
@@ -23,6 +26,9 @@ const routes: Routes = [
   {path:'gererev' ,component : GererevComponent},
   {path:'geresal' ,component : GeresalComponent},
   {path:'cmptemp' ,component : CmptempComponent},
+  {path:'cashfonc',component: CashfoncComponent},
+  {path:'santefin',component: SantefinComponent},
+  // {path:'gereinv',component: GereinvComponent},
 ];
 
 @NgModule({

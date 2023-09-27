@@ -22,8 +22,7 @@ export class ConnexiontComponent {
     this.authService.login(this.authRequest).subscribe((res:any)=>{
       console.log(res);
   window.localStorage.setItem("token", res.token);
-console.log("TOKEN OK"+res.token)
-
+console.log("TOKEN OK "+res.token+ " "+res.role)
     });
 
     

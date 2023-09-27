@@ -13,9 +13,13 @@ padding: 12px;
 margin:auto;
 min-width: 600px;
 }
+.table-bordered{
+  width: 100%;
+  min-height: 500px;
+}
   .maincontent .maintitle{
-    background-color: #e19c34a1;
-    margin:auto;
+    /* background-color: #e19c34a1; */
+    margin:0 aut 10px auto;
     width: 100%;
     min-width: 600px;
     text-align: center;
@@ -28,11 +32,12 @@ min-width: 600px;
   }
   .card{
     --bs-card-bg:#fff;
-    min-width: 700px;
+    min-width: 600px;
     border:none;
     width: 90%;
+    overflow: hidden;
     position: relative;
-    margin:7% auto;
+    margin: auto;
     padding-bottom: 20px;
   }
   .nav{

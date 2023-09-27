@@ -16,6 +16,17 @@ export class InscriptionService {
       }),
     }
     console.log("Le service d'inscription fonctionne  "+registRequest.password+registRequest.email);
-    return this.http.post('http://localhost:8080/auth/register', registRequest, httpOptions).pipe(); 
+    return this.http.post('http://localhost:8080/auth/register/client', registRequest, httpOptions).pipe(); 
   }
+  inscriptionE(registRequest : RegistRequest){
+    const httpOptions ={
+      headers: new HttpHeaders({
+        "Content-type" : "application/json",
+
+      }),
+    }
+    console.log("Le service d'inscription fonctionne  "+registRequest.password+registRequest.email);
+    return this.http.post('http://localhost:8080/auth/register/employe', registRequest, httpOptions).pipe(); 
+  }
+
 }

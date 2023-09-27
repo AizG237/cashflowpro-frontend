@@ -11,7 +11,11 @@ height: 100%;
 background-color:#105a39a9 ;
 padding: 12px;
 margin:auto;
-min-width: 600px;
+width: 100%;
+}
+.table-bordered{
+  width: 100%;
+  min-height: 500px;
 }
   .maincontent .maintitle{
     background-color: #105A39;
@@ -27,7 +31,7 @@ min-width: 600px;
   }
   .maintitle h2{
     color: #35795bcc;
-    margin:o0;
+    margin:0;
     line-height: 20px;
   }
 .card{
@@ -37,8 +41,7 @@ min-width: 600px;
     width: 100%;
     overflow: hidden;
     position: relative;
-    margin:auto;
-    min-height: 600px;
+    margin: auto;
     padding-bottom: 20px;
   }
   .nav{
@@ -53,6 +56,8 @@ min-width: 600px;
   }
   .nav-pills .nav-link.active{
     background-color: #105a39c9;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
   }
   .nav-pills .nav-link {
       border-radius: 0px;
@@ -66,6 +71,7 @@ min-width: 600px;
     padding: 10px;
    min-height: 300px;
    height: 100%;
+   overflow-x: scroll;
   }
   .formcont1{
     /* height: 300px; */
@@ -144,4 +150,16 @@ min-width: 600px;
   thead th{
     color: #01180e;
     background-color: #105a3969;
+    min-width: 120px;
+  }
+  .pertes th, .pertes td{
+    background-color: #f5c0c0;
+  }
+  .gain th, .gain td{
+    background-color: #b6f7d9;
+  }
+  .cash{
+    color: #01180e!important;
+    font-weight: bold!important;
+    background-color:#105a3969!important;
   }
