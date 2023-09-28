@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { PlanInvest } from 'src/app/modele/plan-invest';
+import { PlanInvestServiceService } from 'src/app/service/plan-invest-service.service';
 
 @Component({
   selector: 'app-gerepi',
@@ -6,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./gerepi.component.css']
 })
 export class GerepiComponent {
+  invest = new PlanInvest();
+constructor(private planInvestService : PlanInvestServiceService){}
+OnAddPlanInvest():void{
+this.planInvestService.addPlanInvest(this.invest).subscribe((res:any) =>{
+  console.log(" Test new PLAN INVESTISSEMENT OK"+res);
+});
+
+}
 
 }

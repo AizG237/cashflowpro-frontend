@@ -146,15 +146,51 @@
                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                      </div>
                                      <div class="modal-body">
-                                         <form action="">
-                                             <input type="text" placeholder="Nom facture" class="form-control" required><br>
+                                         <form role="form" (ngSubmit) ="OnRegistFacManuel()">
+                                             <input type="text" placeholder="Nom facture" class="form-control"  name="nomfacture" [(ngModel)] = "facture.nomsociete" [ngModelOptions]="{standalone:true}" required minlength="4" #nomsocietevr="ngModel" [ngClass]="
+                                             {'is-invalid':nomsocietevr.touched && !nomsocietevr.valid}"><br>
+                                             <!-- ----------------alerts----------- -->
+                                             <div *ngIf='nomsocietevr.getError("required")' class="invalid-feedback" role="alert">
+                                                 Champs requis
+                                               </div>
+                                               <div *ngIf='nomsocietevr.getError("minlength")' class="invalid-feedback" role="alert">
+                                                Nombre de caractère minimum non atteint
+                                               </div>
+
                                              <label for="">Date réception</label><br>
-                                             <input type="date" class="form-control" required><br>
-                                             <label for="">Délais paiement</label>
-                                             <input type="date"  class="form-control" required><br>
-                                             <input type="number" placeholder="Montant" class="form-control" required><br>
+                                             <input type="date" class="form-control"  name="daterecp" [(ngModel)] = "facture.datereception" [ngModelOptions]="{standalone:true}" required #daterecepvr="ngModel" [ngClass]="
+                                             {'is-invalid':daterecepvr.touched && !daterecepvr.valid}"><br>
+                                             <!-- ----------------alerts----------- -->
+                                             <div *ngIf='  daterecepvr.getError("required")' class="invalid-feedback" role="alert">
+                                                 Champs requis
+                                               </div>
+
+                                             <label for="">Payer avant le:</label>
+                                             <input type="date"  class="form-control" name="delai" [(ngModel)] = "facture.delai" [ngModelOptions]="{standalone:true}" required  #delaivr="ngModel" [ngClass]="
+                                             {'is-invalid':delaivr.touched && !delaivr.valid}"><br>
+                                             <!-- ----------------alerts----------- -->
+                                             <div *ngIf='delaivr.getError("required")' class="invalid-feedback" role="alert">
+                                                 Champs requis
+                                               </div>
+                                               
+
+                                             <input type="number" placeholder="Montant" class="form-control"  name="montatant" [(ngModel)] = "facture.montant" [ngModelOptions]="{standalone:true}" required number #montantvr="ngModel" [ngClass]="
+                                             {'is-invalid':montantvr.touched && !montantvr.valid}"><br>
+                                             <!-- ----------------alerts----------- -->
+                                             <div *ngIf='montantvr.getError("required")' class="invalid-feedback" role="alert">
+                                                 Champs requis
+                                               </div>
+                                               <div *ngIf='montantvr.getError("number")' class="invalid-feedback" role="alert">
+                                               Ce champ doit contenir des nombres uniquement.
+                                               </div>
+
                                              <button type="reset" class="btn btn-danger">Annuler</button>
-                                             <button type="submit" class="btn btn-success">Valider</button>
+
+                                             <button type="submit" class="btn btn-success" disabled class="btn btn-dark btn-block"
+                                             *ngIf='nomsocietevr.getError("required") || nomsocietevr.getError("minlength") || daterecepvr.getError("required") || delaivr.getError("required") || montantvr.getError("required") || montantvr.getError("number")' 
+                                             type="submit">Valider</button>
+
+                                             <button type="submit" class="btn btn-success"  *ngIf='!nomsocietevr.getError("required") && !nomsocietevr.getError("minlength") && !daterecepvr.getError("required") && !delaivr.getError("required") && !montantvr.getError("required") && !montantvr.getError("number")'>Valider</button>
                                          </form>
                                      </div>
                                  </div>
@@ -210,7 +246,7 @@
                                                 <div class="modal-dialog salaire">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Modification du salaire</h5>
+                                                    <h5 class="modal-title" id="exampleModalLabel">Modification de la facture</h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">

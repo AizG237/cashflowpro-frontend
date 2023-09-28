@@ -61,22 +61,88 @@
         
                             <div class="mainform">
                                 <div class="formul">
-                                    <form action="">
+                                    <form role="form" (ngSubmit)= "OnAddPlanInvest()">
                                         <label for="">Nom PI:</label><br>
-                                        <input type="text"  class="form-control" required>
+                                        <input type="text"  class="form-control" name="nominvest" [(ngModel)] = "invest.nominvest" [ngModelOptions]="{standalone:true}" required minlength="3" maxlength="30"  #nominvestvr="ngModel" [ngClass]="
+                                        {'is-invalid':nominvestvr.touched &&    nominvestvr.valid}">
+
+                                         <!-- ----------------alerts----------- -->
+                                        <div *ngIf='nominvestvr.getError("required")' class="invalid-feedback" role="alert">
+                                            Champs requis
+                                          </div>
+                                          <div *ngIf='nominvestvr.getError("minlength")' class="invalid-feedback" role="alert">
+                                           Nombre minimum non atteint 
+                                          </div>
+
+
                                         <label for="">Nom Actifs:</label><br>
-                                        <input type="text" class="form-control" required>
+                                        <input type="text" class="form-control"name="nomactif" [(ngModel)] = "invest.nomactif" [ngModelOptions]="{standalone:true}" required minlength="3" maxlength="30"  #nomactifvr="ngModel" [ngClass]="
+                                        {'is-invalid':nomactifvr.touched && !nomactifvr.valid}">
+
+                                        <!-- ----------------alerts----------- -->
+                                        <div *ngIf='nomactifvr.getError("required")' class="invalid-feedback" role="alert">
+                                            Champs requis
+                                          </div>
+                                          <div *ngIf='  nomactifvr.getError("minlength")' class="invalid-feedback" role="alert">
+                                           Nombre minimum non atteint 
+                                          </div>
+
                                         <label for="">Nom broker:</label><br>
-                                        <input type="text" class="form-control" required>
+                                        <input type="text" class="form-control" name="nombroker" [(ngModel)] = "invest.broker" [ngModelOptions]="{standalone:true}" required minlength="3" #brokervr="ngModel" [ngClass]="
+                                        {'is-invalid':brokervr.touched &&  !brokervr.valid}">
+
+                                        <!-- ----------------alerts----------- -->
+                                        <div *ngIf='brokervr.getError("required")' class="invalid-feedback" role="alert">
+                                            Champs requis
+                                          </div>
+                                          <div *ngIf='brokervr.getError("minlength")' class="invalid-feedback" role="alert">
+                                           Nombre minimum non atteint 
+                                          </div>
+
                                         <label for="">Montant min:</label><br>
-                                        <input type="number" class="form-control" required>
+                                        <input type="number" class="form-control" name="montantmin" [(ngModel)] = "invest.montantmin" [ngModelOptions]="{standalone:true}" required number #montantminvr="ngModel" [ngClass]="
+                                        {'is-invalid':montantminvr.touched && !montantminvr.valid}">
+                                        <!-- ----------------alerts----------- -->
+                                        <div *ngIf='nomactifvr.getError("required")' class="invalid-feedback" role="alert">
+                                            Champs requis
+                                          </div>
+                                          <div *ngIf='nomactifvr.getError("number")' class="invalid-feedback" role="alert">
+                                           Ce champ ne doit comporter que des chiffres
+                                          </div>
+
                                         <label for="">Durée min:</label><br>
-                                        <input type="number" class="form-control" required>
+                                        <input type="number" class="form-control" name="dureemin" [(ngModel)] = "invest.dureemin" [ngModelOptions]="{standalone:true}" required number #dureminvr="ngModel" [ngClass]="
+                                        {'is-invalid':dureminvr.touched && !dureminvr.valid}">
+
+                                        <!-- ----------------alerts----------- -->
+                                        <div *ngIf='dureminvr.getError("required")' class="invalid-feedback" role="alert">
+                                            Champs requis
+                                          </div>
+                                          <div *ngIf='  dureminvr.getError("minlength")' class="invalid-feedback" role="alert">
+                                           Ce champ ne doit comporter que des chiffres
+                                          </div>
+
                                         <label for="">Rendement Moyen:</label><br>
-                                        <input type="number" class="form-control" required>
+                                        <input type="number" class="form-control" name="rendementmoyen" [(ngModel)] = "invest.rendementmoyen" [ngModelOptions]="{standalone:true}" required number  #rendementmoyenvr="ngModel" [ngClass]="
+                                        {'is-invalid':rendementmoyenvr.touched && !rendementmoyenvr.valid}">
+
+                                          <!-- ----------------alerts----------- -->
+                                          <div *ngIf='rendementmoyenvr.getError("required")' class="invalid-feedback" role="alert">
+                                            Champs requis
+                                          </div>
+                                          <div *ngIf='  rendementmoyenvr.getError("minlength")' class="invalid-feedback" role="alert">
+                                           Ce champ ne doit comporter que des chiffres
+                                          </div>
+
 
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                                        <button type="submit" class="btn btn-success">Valider</button>
+
+                                        <button type="submit" class="btn btn-success" disabled class="btn btn-dark btn-block"
+                                        *ngIf='nominvestvr.getError("required") || nominvestvr.getError("email") || dureminvr.getError("required") || dureminvr.getError("number") || nomactifvr.getError("required") || nomactifvr.getError("minlength") || montantminvr.getError("required") || montantminvr.getError("number") || brokervr.getError("required") || brokervr.getError("minlength") || rendementmoyenvr.getError("required") || rendementmoyenvr.getError("number")' 
+                                        type="submit">Valider</button>
+
+                                        <button type="submit" class="btn btn-success"  class="btn btn-dark btn-block"
+                                        *ngIf='!nominvestvr.getError("required") && !nominvestvr.getError("email") && !dureminvr.getError("required") && !dureminvr.getError("number") &&! nomactifvr.getError("required") &&! nomactifvr.getError("minlength") &&! montantminvr.getError("required") &&!montantminvr.getError("number") &&! brokervr.getError("required") &&! brokervr.getError("minlength") && !rendementmoyenvr.getError("required") &&!rendementmoyenvr.getError("number")'  >Valider</button>
                                     </form>
                                 </div>
                             </div>
