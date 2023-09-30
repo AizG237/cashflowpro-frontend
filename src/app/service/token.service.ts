@@ -7,7 +7,7 @@ export class TokenService {
 
   constructor() { }
   getToken(){
-    return window.localStorage.getItem('token');
+    return window.localStorage.getItem("token");
   }
   hasToken(){
     return this.getToken() != null;

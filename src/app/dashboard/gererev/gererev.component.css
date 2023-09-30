@@ -8,16 +8,18 @@ width: 100%;
 height: 100%;
 }
 .maincontent{
-background-color:#105a39a9 ;
+/* background-color:#105a39a9 ; */
 padding: 12px;
 margin:auto;
-min-width: 600px;
+width: 100%;
+}
+.table-bordered{
+  width: 100%;
+  min-height: 300px;
 }
   .maincontent .maintitle{
-    background-color: #105A39;
     margin:0 auto 10px auto;
     width: 100%;
-    min-width: 600px;
     padding: 20px;
     text-align: left;
   }
@@ -26,13 +28,12 @@ min-width: 600px;
     font-size: 22px;
   }
   .maintitle h2{
-    color: #35795bcc;
-    margin:o0;
+    color: #519259;
+    margin:0;
     line-height: 20px;
   }
 .card{
     --bs-card-bg:#fff;
-    min-width: 600px;
     border:none;
     width: 100%;
     overflow: hidden;
@@ -42,8 +43,8 @@ min-width: 600px;
     padding-bottom: 20px;
   }
   .nav{
-    --bs-nav-link-hover-color:#885305d7;
-    --bs-nav-link-color:#885305d7;
+    --bs-nav-link-hover-color:#064635;
+    --bs-nav-link-color:#064635;
   }
   .nav-pills{
   
@@ -52,15 +53,15 @@ min-width: 600px;
     cursor: default;
   }
   .nav-pills .nav-link.active{
-    background-color: #105a39c9;
+    background-color: #064635;
   }
   .nav-pills .nav-link {
       border-radius: 0px;
-          border-bottom: 1px solid #C47A0D;
+          border-bottom: 1px solid #064635;
   }
   .nav-item{
         display: table-cell;
-         background: #e19c34a1;
+         background: #F0BB62;
   }
   .form{
     padding: 10px;
@@ -72,10 +73,12 @@ min-width: 600px;
     width: 80%;
     margin: auto;
     /* background-color: #C47A0D; */
+    border:2px solid #ffdda9d5;
+    border-radius: 3px;
     padding: 15px 10px;
   }
   .headform{
-    background-color: #0b5a378c;
+    background-color: #F4EEA9;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
     padding: 5px;
@@ -120,7 +123,7 @@ min-width: 600px;
     box-shadow: none;
   }
   .modal-header{
-    background-color:#a86807e5 ;
+    background-color:#064635;
     color: #fff;
 }
 .modal{
@@ -142,6 +145,6 @@ min-width: 600px;
     margin:20px 5px 5px 5px ;
   }
   thead th{
-    color: #01180e;
-    background-color: #105a3969;
+    color: #064635;
+    background-color: #519259a8;
   }

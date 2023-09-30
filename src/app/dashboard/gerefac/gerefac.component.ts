@@ -17,8 +17,7 @@ OnRegistFacManuel():void{
     console.log( " La response est "+ res.token);
 
   })
-
-
+  
 }
 
 

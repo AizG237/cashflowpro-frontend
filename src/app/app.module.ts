@@ -11,12 +11,12 @@ import { GererevComponent } from './dashboard/gererev/gererev.component';
 import { GeresalComponent } from './dashboard/geresal/geresal.component';
 import { GerefacComponent } from './dashboard/gerefac/gerefac.component';
 import { GerepiComponent } from './dashboard/gerepi/gerepi.component';
-import { GereplanepComponent } from './dashboard/gereplanep/gereplanep.component';
 import { CmptempComponent } from './dashboard/cmptemp/cmptemp.component';
 import { ConnexiontComponent } from './connexiont/connexiont.component';
 import{CashfoncComponent} from './dashboard/cashfonc/cashfonc.component';
 import{SantefinComponent} from './dashboard/santefin/santefin.component';
-//import { GereinvComponent } from './dashboard/gereinv/gereinv.component';
+import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
+import { GereinvComponent } from './dashboard/gereinv/gereinv.component';
 
 
 @NgModule({
@@ -29,12 +29,12 @@ import{SantefinComponent} from './dashboard/santefin/santefin.component';
     GeresalComponent,
     GerefacComponent,
     GerepiComponent,
-    GereplanepComponent,
     CmptempComponent,
     ConnexiontComponent,
     CashfoncComponent,
     SantefinComponent,
-    // GereinvComponent
+    DashboardComponent,
+    GereinvComponent
   ],
   imports: [
     BrowserModule,

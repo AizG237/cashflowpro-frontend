@@ -13,69 +13,34 @@ padding: 3%;
 margin:auto;
 width: 100%;
 height: 100%;
-min-width: 600px;
 text-align: center;
 }
 .sante{
     margin: 0 auto;
     border-radius: 5px;
     width: 100%;
-    background-color: #f7ebda;
-    color: #C47A0D;
+    /* background-color: #f7ebda; */
+    color:#064635;
     height: 90px;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
 }
 .sante h1{
     font-size: 2.4em;
 }
-a{
-    text-decoration: none;
-}
-.resum h3{
-    color: #105A39;
-    margin:0;
-}
-.resum span{
-    color: #e7a747;
-    font-weight: 500;
-}
-.res:hover{
-    background-color: #76ffc11e;
-    transition: ease-in-out .3s;
-}
-.res{
-    margin: 1%;
-    display:inline-block;
-    width: 23%;
-    min-width: 200px;
-    vertical-align: top;
-    height: 150px;
-    border-radius: 13px;
-    text-align: center;
-    /* background-color: #fdf5e8; */
-    padding: 10px;
-    box-shadow: 1px 1px 10px #97dbbd;
-}
-.graph,.resum{
-    width: 97%;
-    min-width: 600px;
+
+.graph{
+    width: 100%;
     display: block;
     padding: 20px;
-}
-.resum{
-    /* background-color: aquamarine; */
-}
-.graph{
     /* background-color: darkolivegreen; */
-    min-height: 350px;
+    height: 350px;
     text-align: center;
-    margin-top: 20px;
     padding: 20px;
 }
 .elemnt{
     border-radius: 5px;
-    background-color: #eef0ef;
+    background-color: #f3f3f3;
     height: 100%;
     padding: 10px 20px;
 }

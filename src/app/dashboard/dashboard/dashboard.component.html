@@ -1,0 +1,142 @@
+<div class="sidebar">
+  <div class="logo-details">
+    <!-- <i class="bx bxl-c-plus-plus"></i> -->
+    <span class="logo_name">
+      <div class="logo">
+        <img alt="" src="/../../images/téléchargement-removebg-preview.png" alt="">
+      </div>
+      <p>Cashflow Pro</p>
+    </span>
+  </div>
+  <ul class="nav-links">
+    <li>
+      <a routerLink="/dashboard/santefin" routerLinkActive="active" data-bs-toggle="tooltip" data-bs-placement="right" title="Santé financiere">
+        <i class="bi bi-bar-chart-line-fill"></i>
+        
+        <span class="links_name">Santé financiere</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/dashboard/gerefac" routerLinkActive="active"  data-bs-toggle="tooltip" data-bs-placement="right" title="Factures">
+        <i class="bi bi-calculator"></i>
+        <span class="links_name">Factures</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/dashboard/gerepi" routerLinkActive="active" data-bs-toggle="tooltip" data-bs-placement="right" title="Plan d'Investissement">
+        <i class="bi bi-journal-check"></i>
+        <span class="links_name">Plan d'Investissement</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/dashboard/gererev" routerLinkActive="active" data-bs-toggle="tooltip" data-bs-placement="right" title="Revenu">
+        <i class="bi bi-cash"></i>
+        <span class="links_name">Revenu</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/dashboard/geresal" routerLinkActive="active" data-bs-toggle="tooltip" data-bs-placement="right" title="Salaire">
+        <i class="bi bi-bank2"></i>
+        <span class="links_name">Salaire</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/dashboard/cmptemp" routerLinkActive="active" data-bs-toggle="tooltip" data-bs-placement="right" title="Employés">
+        <i class="bi bi-person-plus"></i>
+        <span class="links_name">Employés</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/dashboard/cashfonc" routerLinkActive="active" data-bs-toggle="tooltip" data-bs-placement="right" title="Casflows">
+        <i class="bi bi-shuffle"></i>
+        <span class="links_name">Casflows</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/dashboard/gereinv" routerLinkActive="active" data-bs-toggle="tooltip" data-bs-placement="right" title="Investissement">
+        <i class="bi bi-piggy-bank"></i>
+        <span class="links_name">Investissement</span>
+      </a>
+    </li>
+    <li class="log_out">
+      <a data-bs-toggle="tooltip" data-bs-placement="right" title="Déconnexion">
+        <i class="bi bi-box-arrow-left"></i>
+        <span class="links_name"> Déconnexion</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<section class="home-section">
+  <nav>
+    <div class="sidebar-button">
+      <i class="bx bx-menu sidebarBtn"></i>
+      <span class="dashboard">Dashboard</span>
+    </div>
+    <div class="search-box">
+      <input placeholder="Search..." type="text"/>
+      <i class="bi bi-search"></i>
+    </div>
+    <div class="profile-details">
+      <img alt="" src="/../../images/téléchargement-removebg-preview.png"/>
+      <!-- -----------------------------------NOM ICI------------------------ -->
+      <span class="admin_name"></span>
+      <i class="bx bx-chevron-down"></i>
+    </div>
+  </nav>
+
+  <div class="home-content">
+    <div class="overview-boxes">
+      <div class="box">
+        <div class="right-side">
+          <div class="box-topic">Cashflow  de Fonctionnement</div>
+          <div class="number">250 000 FCFA</div>
+          <div class="indicator">
+            <i class="bx bx-up-arrow-alt"></i>
+            <span class="text">Up from yesterday</span>
+          </div>
+        </div>
+        <i class="bi bi-award cart"></i>
+      </div>
+      <div class="box">
+        <div class="right-side">
+          <div class="box-topic">Cashflow Libre</div>
+          <div class="number">700 000 FCFA</div>
+          <div class="indicator">
+            <i class="bx bx-up-arrow-alt"></i>
+            <span class="text">Up from yesterday</span>
+          </div>
+        </div>
+        <i class="bi bi-award-fill cart two"></i>
+      </div>
+      <div class="box">
+        <div class="right-side">
+          <div class="box-topic">Depenses Totales</div>
+          <div class="number">3 000 000 FCFA</div>
+          <div class="indicator">
+            <i class="bx bx-up-arrow-alt"></i>
+            <span class="text">Up from yesterday</span>
+          </div>
+        </div>
+        <i class="bi bi-cash-stack cart three"></i>
+      </div>
+      <div class="box">
+        <div class="right-side">
+          <div class="box-topic">Gains Total</div>
+          <div class="number">70 000 000 FCFA</div>
+          <div class="indicator">
+            <i class="bx bx-down-arrow-alt down"></i>
+            <span class="text">Down From Today</span>
+          </div>
+        </div>
+        <i class="bi bi-piggy-bank-fill cart four"></i>
+      </div>
+    </div>
+
+    <div class="sales-boxes">
+      <div class="recent-sales box">
+        <router-outlet></router-outlet>
+      </div>
+
+    </div>
+  </div>
+</section>

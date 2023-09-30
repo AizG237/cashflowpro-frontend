@@ -14,12 +14,12 @@ margin:auto;
 width: 100%;
 }
 .table-bordered{
-    width: 100%;
-    min-height: 300px;
-    overflow-x: scroll;
+  width: 100%;
+  min-height: 300px;
 }
   .maincontent .maintitle{
-    margin:0 auto 10px auto;
+    /* background-color: #e19c34a1; */
+    margin:auto;
     width: 100%;
     text-align: center;
     padding: 20px;
@@ -34,9 +34,10 @@ width: 100%;
     --bs-card-bg:#fff;
     border:none;
     overflow: hidden;
+    overflow-x: scroll;
     width: 100%;
     position: relative;
-    margin: auto;
+    margin:7% auto;
     padding-bottom: 20px;
   }
   .nav{
@@ -63,6 +64,7 @@ width: 100%;
          background: #F0BB62;
   }
   .form{
+    padding: 10px;
    min-height: 300px;
    height: 100%;
    overflow-x: scroll;
@@ -94,43 +96,3 @@ width: 100%;
   form input:focus{
     box-shadow: none;
   }
-    .formul{
-        width: 100%;
-        min-width: 450px;
-        /* background-color:#01BA68 ; */
-        background-color: #fff;
-        margin: auto;
-        padding: 30px 20px;
-    }
-    .formul input,select{
-        border-radius: 5px;
-        margin: 0 auto 12px auto;
-        width: 80%;
-      }
-      .formul form button{
-        margin: 10px;
-      }
-      /* .btn-success{
-        background-color: #E19C34;
-        border: none;
-        --bs-btn-active-bg:#C47A0D;
-    }
-    .btn-success:hover{
-        background-color: #C47A0D;
-    } */
-    .formul  form input:focus, .formul  select:focus{
-        box-shadow: none;
-        border:2px solid #01ba6742 ;
-      }
-      .formul label{
-        font-size: 14px;
-        color:#002F1B ;
-      }
-      form{
-        padding: 20px;
-      }
-      fieldset{
-        padding: 5px 8px ;
-        border:solid 2px #01ba6742;
-        border-radius: 10px;
-      }

@@ -1,0 +1,242 @@
+<section class="main">
+    <div class="maincontent">
+        <div class="maintitle">
+            <h2>Gestion d'investissement</h2>
+        </div>
+        <div class="bloctables">
+            <div class="card">
+
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item text-center">
+                      <a class="nav-link active btl" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Liste des PI existants</a>
+                    </li>
+                    <li class="nav-item text-center">
+                      <a class="nav-link btr" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Liste des PI souscris</a>
+                    </li>
+                    <li class="nav-item text-center">
+                      <a class="nav-link btr" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile3" role="tab" aria-controls="pills-profile" aria-selected="false">Patrimoine personnel</a>
+                    </li>
+                   
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                        <div class="form px-4 ">
+
+                            <table class="table table-bordered" data-toggle="table" data-search="true" data-pagination="true">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">Nom PI</th>
+                                        <th scope="col">Nom Actifs</th>
+                                        <th scope="col">Nom broker</th>
+                                        <th scope="col">Montant min</th>
+                                        <th scope="col">Durée min</th>
+                                        <th scope="col">Taux annuel</th>
+                                        <th scope="col">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                        <td>@mdo</td>
+                                        <td>@mdo</td>
+                                        <td>@mdo</td>
+                                        <td>
+                                            <!-- Button souscrip-->
+                                            <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#formsouscri">
+                                                Souscrir
+                                            </button>
+                                            
+                                            <!-- Modal souscrip-->
+                                            <div class="modal fade" id="formsouscri" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog salaire">
+                                                <div class="modal-content ">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Modification du plan d'investissement</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form action="">
+                                                            <input type="text" class="form-control" placeholder="Nom plan épargne" required><br>
+                                                            <input type="text" class="form-control" placeholder="Nom actif" required><br>
+                                                            <input type="text" class="form-control" placeholder="Nom broker" required><br>
+                                                            <input type="text" class="form-control" placeholder="Durée" required><br>
+                                                            <input type="number"  placeholder="Montant" class="form-control" required><br>
+                                                            <button type="submit" class="btn btn-success">Valider</button>
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </td>
+                                        </tr>
+                                        <!-- <tr>
+                                        <th scope="row">3</th>
+                                        <td colspan="2">Larry the Bird</td>
+                                        <td>@twitter</td>
+                                        </tr> -->
+                                    </tbody>
+                                    </table>
+                            </table>
+
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        <div class="form px-4 ">
+        
+                            <table class="table table-bordered" data-toggle="table" data-search="true" data-pagination="true">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">Nom PE</th>
+                                        <th scope="col">Nom Actifs</th>
+                                        <th scope="col">Nom broker</th>
+                                        <th scope="col">Montant </th>
+                                        <th scope="col">Durée </th>
+                                        <th scope="col">Taux </th>
+                                        <th scope="col">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>Otto</td>
+                                        <td>Otto</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                        <td>
+                                            <!-- Button supp-->
+                                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#supprim"><i class="bi bi-trash-fill"></i>
+                                            </button>
+                                            
+                                            <!-- Modal supp-->
+                                            <div class="modal fade" id="supprim" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog veriif">
+                                                <div class="modal-content ">
+                                                    <div class="modal-body">
+                                                        <p>Voulez-vous suppri,er ce plan d'épargne</p>
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Non</button>
+                                                    <button type="button" class="btn btn-success"data-bs-dismiss="modal">Oui</button>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Button edit-->
+                                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#edit">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </button>
+                                            
+                                            <!-- Modal edit-->
+                                            <div class="modal fade" id="edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog salaire">
+                                                <div class="modal-content ">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Modification du plan d'épargne</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form action="">
+                                                            <input type="text" class="form-control" placeholder="Nom plan épargne" required><br>
+                                                            <input type="text" class="form-control" placeholder="Nom actif" required><br>
+                                                            <input type="text" class="form-control" placeholder="Nom broker" required><br>
+                                                            <input type="text" class="form-control" placeholder="Durée" required><br>
+                                                            <input type="number"  placeholder="Montant" class="form-control" required><br>
+                                                            <button type="submit" class="btn btn-success">Valider</button>
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        </tr>
+                                        <!-- <tr>
+                                        <th scope="row">3</th>
+                                        <td colspan="2">Larry the Bird</td>
+                                        <td>@twitter</td>
+                                        </tr> -->
+                                    </tbody>
+                                </table>
+                            </table>
+                            
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="pills-profile3" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        <div class="form px-4 ">
+        
+                            <table class="table table-bordered" data-toggle="table" data-search="true" data-pagination="true">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">Nom PE</th>
+                                        <th scope="col">Montant total investi</th>
+                                        <th scope="col">Montant généré</th>
+                                        <th scope="col">Période </th>
+                                        <th scope="col">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                        <td>@mdo</td>
+                                        <td>
+                                            <!-- Button retrait-->
+                                            <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#retrait">Retrait
+                                            </button>
+                                            
+                                            <!-- Modal retrait-->
+                                            <div class="modal fade" id="retrait" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog salaire">
+                                                <div class="modal-content ">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Formulaire de retrait</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                    <div class="modal-body">
+                                                        <form action="">
+                                                            <input type="text" class="form-control" placeholder="Nom plan épargne" disabled ><br>
+                                                            <input type="number"  placeholder="Montant à retirer" class="form-control" required><br>
+                                                            <button type="submit" class="btn btn-success">Valider</button>
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        </tr>
+                                        <!-- <tr>
+                                        <th scope="row">3</th>
+                                        <td colspan="2">Larry the Bird</td>
+                                        <td>@twitter</td>
+                                        </tr> -->
+                                    </tbody>
+                                </table>
+                            </table>
+                            
+                        </div>
+                    </div>
+                
+                </div>
+              
+            </div>
+        </div>
+    </div>
+</section>

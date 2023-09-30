@@ -5,6 +5,7 @@ import { LoginService } from '../service/login.service';
 import { RegistRequest } from '../modele/regist-request';
 import { InscriptionService } from '../service/inscription.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-connexiont',
@@ -15,7 +16,7 @@ export class ConnexiontComponent {
 
   authRequest: AuthRequest = new AuthRequest();
   regist: RegistRequest = new RegistRequest();
-  constructor(private authService : LoginService, private insciptionService : InscriptionService){ }
+  constructor(private authService : LoginService, private insciptionService : InscriptionService, private router :Router){ }
 
   OnSubmit():void{
     console.log('test',this.authRequest);
@@ -23,6 +24,15 @@ export class ConnexiontComponent {
       console.log(res);
   window.localStorage.setItem("token", res.token);
 console.log("TOKEN OK "+res.token+ " "+res.role)
+switch(res.role){
+case 'CLIENT': this.router.navigate(['/dash'])
+break;
+case 'EMPLOYE':this.router.navigate(['/gererev'])
+break;
+
+
+
+}
     });
 
     

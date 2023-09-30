@@ -24,7 +24,7 @@
                 <div class="tab-content" id="pills-tabContent">
 
                     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                        <div class="form px-4 pt-5">
+                        <div class="form px-4">
 
                              <!-- Button trigger modal -->
                              <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addpaie"><i class="bi bi-plus-lg"></i>Ajouter
@@ -133,7 +133,7 @@
                     </div>
 
                     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                        <div class="form px-4 pt-5">
+                        <div class="form px-4 ">
                              <!-- Button trigger modal ajouter-->
                              <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addpaieman"><i class="bi bi-plus-lg"></i>Ajouter
                              </button>
@@ -158,7 +158,7 @@
                                                </div>
 
                                              <label for="">Date réception</label><br>
-                                             <input type="date" class="form-control"  name="daterecp" [(ngModel)] = "facture.datereception" [ngModelOptions]="{standalone:true}" required #daterecepvr="ngModel" [ngClass]="
+                                             <input type="date" class="form-control"  name="daterecp" [(ngModel)] = "facture.date_reception" [ngModelOptions]="{standalone:true}" required #daterecepvr="ngModel" [ngClass]="
                                              {'is-invalid':daterecepvr.touched && !daterecepvr.valid}"><br>
                                              <!-- ----------------alerts----------- -->
                                              <div *ngIf='  daterecepvr.getError("required")' class="invalid-feedback" role="alert">
@@ -281,7 +281,7 @@
                     </div>
 
                     <div class="tab-pane fade" id="pills-proile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                        <div class="form px-4 pt-5">
+                        <div class="form px-4 ">
 
                             <table class="table table-bordered" data-toggle="table" data-search="true" data-pagination="true">
                                 <table class="table">
@@ -315,7 +315,7 @@
                     </div>
 
                     <div class="tab-pane fade" id="pills-pl" role="tabpanel" aria-labelledby="pills-profile-tab">
-                        <div class="form px-4 pt-5">
+                        <div class="form px-4 ">
         
                             <table class="table table-bordered" data-toggle="table" data-search="true" data-pagination="true">
                                 <table class="table">

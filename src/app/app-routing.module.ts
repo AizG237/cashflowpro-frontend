@@ -5,7 +5,6 @@ import { HeaderComponent } from './Layout/header/header.component';
 import { FooterComponent } from './Layout/footer/footer.component';
 import { GerefacComponent } from './dashboard/gerefac/gerefac.component';
 import { GerepiComponent } from './dashboard/gerepi/gerepi.component';
-import { GereplanepComponent } from './dashboard/gereplanep/gereplanep.component';
 import { GererevComponent } from './dashboard/gererev/gererev.component';
 import { GeresalComponent } from './dashboard/geresal/geresal.component';
 import { CmptempComponent } from './dashboard/cmptemp/cmptemp.component';
@@ -13,7 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { ConnexiontComponent } from './connexiont/connexiont.component';
 import{CashfoncComponent} from './dashboard/cashfonc/cashfonc.component';
 import{SantefinComponent} from './dashboard/santefin/santefin.component';
-// import { GereinvComponent } from './dashboard/gereinv/gereinv.component';
+import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
+import { GereinvComponent } from './dashboard/gereinv/gereinv.component';
 
 
 const routes: Routes = [
@@ -22,13 +22,27 @@ const routes: Routes = [
   {path:'header' ,component : HeaderComponent},
   {path:'gerefac' ,component : GerefacComponent},
   {path:'gerepi' ,component : GerepiComponent},
-  {path:'gereplanep' ,component : GereplanepComponent},
+  {path:'gererev' ,component : GererevComponent},
+  {path:'geresal' ,component : GeresalComponent},
+  {path:'gereinv' ,component : GereinvComponent},
+  {path:'cmptemp' ,component : CmptempComponent},
+  {path:'cashfonc',component: CashfoncComponent},
+  {path:'santefin',component: SantefinComponent},
+
+  {path:'dashboard',component: DashboardComponent,
+ children:[
+  {path:'' ,component : SantefinComponent},
+  {path:'gerefac' ,component : GerefacComponent},
+  {path:'gereinv' ,component : GereinvComponent},
+  {path:'gerepi' ,component : GerepiComponent},
   {path:'gererev' ,component : GererevComponent},
   {path:'geresal' ,component : GeresalComponent},
   {path:'cmptemp' ,component : CmptempComponent},
   {path:'cashfonc',component: CashfoncComponent},
   {path:'santefin',component: SantefinComponent},
-  // {path:'gereinv',component: GereinvComponent},
+
+ ]
+},
 ];
 
 @NgModule({

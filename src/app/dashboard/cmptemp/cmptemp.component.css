@@ -1,31 +1,25 @@
-body{
-    background-color: #000;
-    
-}
+
 
 .main{
 width: 100%;
 height: 100%;
 margin: 0;
-background-position: center;
-    background-size: cover;
-    position: absolute;
-    box-sizing: border-box;
 }
 .maincontent{
-background-color:#01BA68 ;
+/* background-color:#01BA68 ; */
 padding: 12px;
 margin:auto;
-min-width: 600px;
+width: 100%;
 }
 .formul{
     width: 90%;
     max-width: 600px;
     min-width: 450px;
-    background-color: #fff;
+    /* background-color: #b7fdde; */
+    background-color:#C0F2D8 ;
     margin: 3% auto;
     padding: 30px 20px;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 .formul input,select{
     border-radius: 5px;
@@ -35,14 +29,7 @@ min-width: 600px;
   form button{
     margin: 10px;
   }
-  /* .btn-success{
-    background-color: #E19C34;
-    border: none;
-    --bs-btn-active-bg:#C47A0D;
-}
-.btn-success:hover{
-    background-color: #C47A0D;
-} */
+
   form input:focus, select:focus{
     box-shadow: none;
     border:2px solid #01ba6742 ;
@@ -63,5 +50,4 @@ min-width: 600px;
     text-align: center;
     padding: 12px;
     border-radius: 10px;
-    background-color:#ffdba4 ;
   }

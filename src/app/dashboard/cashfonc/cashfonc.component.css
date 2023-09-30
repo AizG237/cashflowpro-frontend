@@ -8,20 +8,20 @@ width: 100%;
 height: 100%;
 }
 .maincontent{
-background-color:#105a39a9 ;
-padding: 12px;
+/* background-color:#105a39a9 ;
+padding: 12px; */
 margin:auto;
 width: 100%;
 }
 .table-bordered{
   width: 100%;
-  min-height: 500px;
+  min-height: 300px;
 }
   .maincontent .maintitle{
-    background-color: #105A39;
+    /* background-color: #105A39; */
     margin:0 auto 10px auto;
     width: 100%;
-    min-width: 600px;
+    /* min-width: 600px; */
     padding: 20px;
     text-align: left;
   }
@@ -30,13 +30,13 @@ width: 100%;
     font-size: 22px;
   }
   .maintitle h2{
-    color: #35795bcc;
+    color: #519259;
     margin:0;
     line-height: 20px;
   }
 .card{
     --bs-card-bg:#fff;
-    min-width: 600px;
+    /* min-width: 600px; */
     border:none;
     width: 100%;
     overflow: hidden;
@@ -45,8 +45,8 @@ width: 100%;
     padding-bottom: 20px;
   }
   .nav{
-    --bs-nav-link-hover-color:#885305d7;
-    --bs-nav-link-color:#885305d7;
+    --bs-nav-link-hover-color:#064635;
+    --bs-nav-link-color:#064635;
   }
   .nav-pills{
   
@@ -55,17 +55,17 @@ width: 100%;
     cursor: default;
   }
   .nav-pills .nav-link.active{
-    background-color: #105a39c9;
+    background-color: #064635;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
   }
   .nav-pills .nav-link {
       border-radius: 0px;
-          border-bottom: 1px solid #C47A0D;
+          border-bottom: 1px solid #064635;
   }
   .nav-item{
         display: table-cell;
-         background: #e19c34a1;
+         background: #F0BB62;
   }
   .form{
     padding: 10px;
@@ -126,7 +126,7 @@ width: 100%;
     box-shadow: none;
   }
   .modal-header{
-    background-color:#a86807e5 ;
+    background-color:#064635 ;
     color: #fff;
 }
 .modal{
@@ -148,18 +148,19 @@ width: 100%;
     margin:20px 5px 5px 5px ;
   }
   thead th{
-    color: #01180e;
-    background-color: #105a3969;
+    color: #064635;
+    background-color: #519259a8;
     min-width: 120px;
   }
-  .pertes th, .pertes td{
+  /* .pertes th, .pertes td{
     background-color: #f5c0c0;
   }
   .gain th, .gain td{
     background-color: #b6f7d9;
-  }
+  } */
   .cash{
-    color: #01180e!important;
+    color: #064635!important;
     font-weight: bold!important;
-    background-color:#105a3969!important;
+    background-color:#519259a8!important;
+    
   }
