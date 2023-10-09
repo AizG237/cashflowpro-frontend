@@ -1,0 +1,61 @@
+body{
+    background-color: #000;
+    
+}
+
+.main{
+width: 100%;
+height: 100%;
+margin: 0;
+background-position: center;
+    background-size: cover;
+    position: absolute;
+    box-sizing: border-box;
+}
+.maincontent{
+background-color:#01BA68 ;
+padding: 12px;
+margin:auto;
+min-width: 600px;
+}
+.formul{
+    width: 60%;
+    min-width: 450px;
+    background-color: #fff;
+    margin: 3% auto;
+    padding: 30px 20px;
+    border-radius: 20px;
+}
+.formul input,select{
+    border-radius: 5px;
+    margin: 0 auto 12px auto;
+    width: 70%;
+  }
+  form button{
+    margin: 10px;
+  }
+  /* .btn-success{
+    background-color: #E19C34;
+    border: none;
+    --bs-btn-active-bg:#C47A0D;
+}
+.btn-success:hover{
+    background-color: #C47A0D;
+} */
+  form input:focus, select:focus{
+    box-shadow: none;
+    border:2px solid #01ba6742 ;
+  }
+  .formul label{
+    font-size: 14px;
+    color:#002F1B ;
+  }
+  form{
+    padding: 20px;
+  }
+  .titleform {
+    text-align: center;
+    padding: 12px;
+    border-radius: 10px;
+    background-color:#ffdba4 ;
+  }

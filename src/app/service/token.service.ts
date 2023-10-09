@@ -12,4 +12,14 @@ export class TokenService {
   hasToken(){
     return this.getToken() != null;
   }
+  getNom(){
+    return window.localStorage.getItem("nom");
+  }
+  getRole(){
+    return window.localStorage.getItem("role");
+  }
+  Clear(){
+    return window.localStorage.clear();
+  }
+  
 }

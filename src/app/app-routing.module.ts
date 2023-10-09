@@ -14,20 +14,25 @@ import{CashfoncComponent} from './dashboard/cashfonc/cashfonc.component';
 import{SantefinComponent} from './dashboard/santefin/santefin.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { GereinvComponent } from './dashboard/gereinv/gereinv.component';
+import { PaiemntComponent } from './dashboard/paiemnt/paiemnt.component';
+import { DonsComponent } from './dashboard/dons/dons.component';
 
 
 const routes: Routes = [
-  {path: 'connexiont', component : ConnexiontComponent},
-  {path:'' ,component : ConnexiontComponent},
-  {path:'header' ,component : HeaderComponent},
-  {path:'gerefac' ,component : GerefacComponent},
-  {path:'gerepi' ,component : GerepiComponent},
-  {path:'gererev' ,component : GererevComponent},
-  {path:'geresal' ,component : GeresalComponent},
-  {path:'gereinv' ,component : GereinvComponent},
-  {path:'cmptemp' ,component : CmptempComponent},
-  {path:'cashfonc',component: CashfoncComponent},
-  {path:'santefin',component: SantefinComponent},
+   {path: 'connexion', component : ConnexiontComponent},
+   {path: '', component : ConnexiontComponent},
+
+  // {path:'' ,component : ConnexiontComponent},
+  // {path:'header' ,component : HeaderComponent},
+  // {path:'gerefac' ,component : GerefacComponent},
+  // {path:'gerepi' ,component : GerepiComponent},
+  // {path:'gererev' ,component : GererevComponent},
+  // {path:'geresal' ,component : GeresalComponent},
+  // {path:'gereinv' ,component : GereinvComponent},
+  // {path:'cmptemp' ,component : CmptempComponent},
+  // {path:'cashfonc',component: CashfoncComponent},
+  // {path:'santefin',component: SantefinComponent},
+  {path:'don',component: DonsComponent},
 
   {path:'dashboard',component: DashboardComponent,
  children:[
@@ -40,7 +45,8 @@ const routes: Routes = [
   {path:'cmptemp' ,component : CmptempComponent},
   {path:'cashfonc',component: CashfoncComponent},
   {path:'santefin',component: SantefinComponent},
-
+  {path:'paiement',component: PaiemntComponent},
+  {path:'don',component: DonsComponent},
  ]
 },
 ];

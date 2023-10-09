@@ -23,9 +23,12 @@ export class ConnexiontComponent {
     this.authService.login(this.authRequest).subscribe((res:any)=>{
       console.log(res);
   window.localStorage.setItem("token", res.token);
-console.log("TOKEN OK "+res.token+ " "+res.role)
+  window.localStorage.setItem("role", res.role);
+  window.localStorage.setItem("nom", res.nom);
+
+console.log("TOKEN OK "+res.token+ " "+res.role+ " "+res.nom)
 switch(res.role){
-case 'CLIENT': this.router.navigate(['/dash'])
+case 'CLIENT': this.router.navigate(['/dashboard'])
 break;
 case 'EMPLOYE':this.router.navigate(['/gererev'])
 break;

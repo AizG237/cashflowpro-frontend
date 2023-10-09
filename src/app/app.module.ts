@@ -17,6 +17,8 @@ import{CashfoncComponent} from './dashboard/cashfonc/cashfonc.component';
 import{SantefinComponent} from './dashboard/santefin/santefin.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { GereinvComponent } from './dashboard/gereinv/gereinv.component';
+import { PaiemntComponent } from './dashboard/paiemnt/paiemnt.component';
+import { DonsComponent } from './dashboard/dons/dons.component';
 
 
 @NgModule({
@@ -34,7 +36,9 @@ import { GereinvComponent } from './dashboard/gereinv/gereinv.component';
     CashfoncComponent,
     SantefinComponent,
     DashboardComponent,
-    GereinvComponent
+    GereinvComponent,
+    PaiemntComponent,
+    DonsComponent
   ],
   imports: [
     BrowserModule,
