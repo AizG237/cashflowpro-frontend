@@ -9,13 +9,17 @@ export class CreationEmplService {
 
   constructor(private http:HttpClient) { }
   newEmploye(employe : RegistEmp){
+    const token = window.localStorage.getItem("token")
     const httpOptions ={
+      
       headers: new HttpHeaders({
         "Content-type" : "application/json",
+        Authorization:"Bearer "+token
 
       }),
     }
-    console.log("Le service d'inscription fonctionne  "+employe.matricule+"   "+employe.email+"    "+employe.firstname);
+    console.log("Le service EMPLOYE "+employe.matricule+"   "+employe.email+"    "+employe.firstname);
     return this.http.post('http://localhost:8080/auth/register/employe', employe, httpOptions).pipe();
   }
+
 }

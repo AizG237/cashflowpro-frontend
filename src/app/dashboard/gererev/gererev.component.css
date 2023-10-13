@@ -77,6 +77,7 @@ width: 100%;
     border-radius: 3px;
     padding: 15px 10px;
   }
+  
   .headform{
     background-color: #F4EEA9;
     border-top-right-radius: 8px;
@@ -107,14 +108,17 @@ width: 100%;
     margin-right: 10px;
   }
   .form-control,.form-select{
-    width: 300px;
+    width: 80%;
     display: inline-block;
     margin: 2px 15px;
   }
-  #motif{
+  .form-select{
+    margin: 2px 4px;
+  }
+  /* #motif{
     position: relative;
     left: 75px;
-  }
+  } */
   .form input{
     border-radius: 5px;
     margin: 0 auto 12px 5px;
@@ -147,4 +151,9 @@ width: 100%;
   thead th{
     color: #064635;
     background-color: #519259a8;
+  }
+  @media(max-width:600px){
+    .formcont1{
+      width: 100%;
+    }
   }

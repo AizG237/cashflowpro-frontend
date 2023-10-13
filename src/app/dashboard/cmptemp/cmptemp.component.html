@@ -1,61 +1,88 @@
-<section class="main">
+<section class="main" >
     <div class="maincontent">
         <div class="formul">
             <div class="titleform">
                 <h2>Employés</h2>
             </div>
-            <form role="form" (ngSubmit)= "OnCreateEmpl()" novalidate>
+            <form role="form" (ngSubmit)= "OnCreateEmpl()"  novalidate>
 
                 <label for="">Nom:</label><br>
-                <input type="text"  class="form-control" [(ngModel)] = "employe.firstname" [ngModelOptions]="{standalone:true}" required minlength="2" #firstnamelvr="ngModel" [ngClass]="
-                {'is-invalid':firstnamelvr.touched && !firstnamelvr.valid}" name="firstname">
+                <input type="text"  class="form-control" [(ngModel)] = "employe.firstname" [ngModelOptions]="{standalone:true}" required minlength="2" #firstnamelvr="ngModel" name="firstname">
                  <!-- ----------------alerts----------- -->
-                 <div *ngIf='firstnamelvr.getError("required")' class="invalid-feedback" role="alert">
+                 <div *ngIf='firstnamelvr.getError("required") && firstnamelvr.touched ' class="invalid-feedback" role="alert">
                     Champs requis
                   </div>
-                  <div *ngIf='firstnamelvr.getError("minlength")' class="invalid-feedback" role="alert">
-                   Nombre minimum non atteint
+                  <div *ngIf='firstnamelvr.getError("minlength")&& firstnamelvr.touched' class="invalid-feedback" role="alert">
+                   Entrer au moins 2 lettres
                   </div>
 
                 <label for="">Prénom:</label><br>
-                <input type="text" class="form-control" name="lastname" required [(ngModel)] = "employe.lastname" [ngModelOptions]="{standalone:true}" required minlength="2" #lastnamelvr="ngModel" [ngClass]="
-                {'is-invalid':lastnamelvr.touched && !lastnamelvr.valid}">
+                <input type="text" class="form-control" name="lastname" required [(ngModel)] = "employe.lastname" [ngModelOptions]="{standalone:true}" required minlength="2" #lastnamelvr="ngModel" >
                  <!-- ----------------alerts----------- -->
-                <div *ngIf='lastnamelvr.getError("required")' class="invalid-feedback" role="alert">
+                <div *ngIf='lastnamelvr.getError("required") && lastnamelvr.touched' class="invalid-feedback" role="alert">
                     Champs requis
                   </div>
-                  <div *ngIf='!lastnamelvr.getError("minlength")' class="invalid-feedback" role="alert">
-                   Nombre minimum non atteint
+                  <div *ngIf='lastnamelvr.getError("minlength")&& lastnamelvr.touched' class="invalid-feedback" role="alert">
+                    Entrer au moins 2 lettres
                   </div>
 
                 <label for="">Date naissansse:</label><br>
-                <input type="date" class="form-control" name="datenaiss" [(ngModel)] = "employe.datenaiss" [ngModelOptions]="{standalone:true}" required  #datenaisslvr="ngModel" [ngClass]="
-                {'is-invalid':datenaisslvr.touched && !datenaisslvr.valid}">
+                <input type="date" class="form-control" name="datenaiss" [(ngModel)] = "employe.datenaiss" [ngModelOptions]="{standalone:true}" required max="2008-01-01" #datenaisslvr="ngModel" >
                  <!-- ----------------alerts----------- -->
-                <div *ngIf='datenaisslvr.getError("required")' class="invalid-feedback" role="alert">
+                <div *ngIf='datenaisslvr.getError("required")&& datenaisslvr.touched' class="invalid-feedback" role="alert">
                     Champs requis
+                  </div>
+                  <div *ngIf='datenaisslvr.getError("max") && datenaisslvr.touched' class="invalid-feedback" role="alert">
+                    Date inacceptable
                   </div>
             
 
                 <fieldset>
                     <legend>Adresse</legend>
                     <label for="">Pays:</label><br>
-                    <input type="text" class="form-control" name="pays" >
+                    <input type="text" class="form-control" name="pays" [(ngModel)] = "addr.pays" [ngModelOptions]="{standalone:true}" required minlength="2" #payvr="ngModel" [ngClass]="
+                    {'is-invalid':payvr.touched && !payvr.valid}">
+                     <!-- ----------------alerts----------- -->
+                <div *ngIf='payvr.getError("required")' class="invalid-feedback" role="alert">
+                  Champs requis
+                </div>
+                <div *ngIf='payvr.getError("minlength")' class="invalid-feedback" role="alert">
+                  Entrer au moins 2 lettres
+                </div>
+
                     <label for="">Ville:</label><br>
-                    <input type="text" class="form-control" name="ville">
+                    <input type="text" class="form-control" name="ville" [(ngModel)] = "addr.ville" [ngModelOptions]="{standalone:true}" required minlength="2" #villevr="ngModel" [ngClass]="
+                    {'is-invalid':villevr.touched && !villevr.valid}">
+                     <!-- ----------------alerts----------- -->
+                <div *ngIf='villevr.getError("required")' class="invalid-feedback" role="alert">
+                  Champs requis
+                </div>
+                <div *ngIf='villevr.getError("minlength")' class="invalid-feedback" role="alert">
+                  Entrer au moins 2 lettres
+                </div>
+
                     <label for="">Quartier:</label><br>
-                    <input type="text" class="form-control" name="Quartier">
+                    <input type="text" class="form-control" name="Quartier" [(ngModel)] = "addr.quartier" [ngModelOptions]="{standalone:true}" required minlength="2" #quartvr="ngModel" [ngClass]="
+                    {'is-invalid':quartvr.touched && !quartvr.valid}">
+                     <!-- ----------------alerts----------- -->
+                <div *ngIf='quartvr.getError("required")' class="invalid-feedback" role="alert">
+                  Champs requis
+                </div>
+                <div *ngIf='quartvr.getError("minlength")' class="invalid-feedback" role="alert">
+                  Entrer au moins 2 lettres
+                </div>
+
                 </fieldset>
                 
                 <label for="">Matricule:</label><br>
-                <input type="text" placeholder="xxxxxx " name="matricule" class="form-control" [(ngModel)] = "employe.matricule" [ngModelOptions]="{standalone:true}" required minlength="2" #matriculelvr="ngModel" [ngClass]="
+                <input type="text" placeholder="xxxxxx " name="matricule" class="form-control" [(ngModel)] = "employe.matricule" [ngModelOptions]="{standalone:true}" required minlength="5" #matriculelvr="ngModel" [ngClass]="
                 {'is-invalid':matriculelvr.touched && !matriculelvr.valid}">
                  <!-- ----------------alerts----------- -->
                  <div *ngIf='matriculelvr.getError("required")' class="invalid-feedback" role="alert">
                     Champs requis
                   </div>
                   <div *ngIf='matriculelvr.getError("minlength")' class="invalid-feedback" role="alert">
-                   Nombre minimum non atteint
+                    Entrer au moins 5 lettres
                   </div>
                 
                 <label for="">Salaire:</label><br>
@@ -75,7 +102,7 @@
                     Champs requis
                   </div>
                   <div *ngIf='telephonelvr.getError("minlength")' class="invalid-feedback" role="alert">
-                   Nombre minimum non atteint 
+                    Entrer au moins 9 chiffres 
                   </div>
 
                 
@@ -89,6 +116,16 @@
                   <div *ngIf=' emaillvr.getError("email")' class="invalid-feedback" role="alert">
                   ce champ doit contenir un email
                   </div>
+        <label for="">Mot de passe:</label><br>
+        <input type="password" placeholder="......" name="password" class="form-control" [(ngModel)] = "employe.password" [ngModelOptions]="{standalone:true}" required email minlength="5" #passwordlvr="ngModel" [ngClass]="
+        {'is-invalid':passwordlvr.touched && !passwordlvr.valid}">
+         <!-- ----------------alerts----------- -->
+         <div *ngIf='passwordlvr.getError("required")' class="invalid-feedback" role="alert">
+            Champs requis
+          </div>
+          <div *ngIf=' passwordlvr.getError("minlength")' class="invalid-feedback" role="alert">
+          ce champ doit contenir au moins 5 caractères
+          </div>
                 
                 <label for="">Rôle:</label>
                 <select class="form-select" aria-label="Default select example" name="role">
@@ -96,15 +133,17 @@
                     <option value="1">Employer</option>
                   </select><br>
                   <label for="">Autorisation d'investissement:</label>
-                <input type="radio" name="Autorisation"><br>
+                <input type="radio" name="Autorisation"><br> 
 
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+
                 <button type="submit" class="btn btn-success"  disabled class="btn btn-dark btn-block"
-                *ngIf='emaillvr.getError("required") || emaillvr.getError("email") || matriculelvr.getError("required") || matriculelvr.getError("minlength") || telephonelvr.getError("required") || telephonelvr.getError("minlength") || firstnamelvr.getError("required") || firstnamelvr.getError("minlength") || lastnamelvr.getError("required") || lastnamelvr.getError("minlength") || datenaisslvr.getError("required") || salairelvr.getError("required")' 
+                *ngIf='emaillvr.getError("required") || emaillvr.getError("email") || matriculelvr.getError("required") || matriculelvr.getError("minlength") || quartvr.getError("required") || quartvr.getError("minlength") || payvr.getError("required") || payvr.getError("minlength") || villevr.getError("required") || villevr.getError("minlength") || telephonelvr.getError("required") || telephonelvr.getError("minlength") || firstnamelvr.getError("required") || firstnamelvr.getError("minlength") || lastnamelvr.getError("required") || lastnamelvr.getError("minlength") || datenaisslvr.getError("required") || salairelvr.getError("required")
+                || passwordlvr.getError("required") || passwordlvr.getError("minlength") || datenaisslvr.getError("max")' 
                 type="submit">Valider</button>
 
                 <button type="submit" class="btn btn-success"  class="btn btn-dark btn-block"
-                *ngIf='!emaillvr.getError("required") && !emaillvr.getError("email") && !matriculelvr.getError("required") && !matriculelvr.getError("minlength") && !telephonelvr.getError("required") && !telephonelvr.getError("minlength") && !firstnamelvr.getError("required") && !firstnamelvr.getError("minlength") && !lastnamelvr.getError("required") && !lastnamelvr.getError("minlength") && !datenaisslvr.getError("required") && !salairelvr.getError("required")'>Valider</button>
+                *ngIf='!emaillvr.getError("required") && !emaillvr.getError("email") && !matriculelvr.getError("required") && !matriculelvr.getError("minlength") && !quartvr.getError("required") && !quartvr.getError("minlength") && !payvr.getError("required") && !payvr.getError("minlength") && !villevr.getError("required") && !villevr.getError("minlength") && !telephonelvr.getError("required") && !telephonelvr.getError("minlength") && !firstnamelvr.getError("required") && !firstnamelvr.getError("minlength") && !lastnamelvr.getError("required") && !lastnamelvr.getError("minlength") && !datenaisslvr.getError("required") && !salairelvr.getError("required") && !passwordlvr.getError("required") && !passwordlvr.getError("minlength") && !datenaisslvr.getError("max")'>Valider</button>
 
             </form>
         </div>

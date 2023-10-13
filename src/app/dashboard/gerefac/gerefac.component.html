@@ -26,10 +26,10 @@
                     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                         <div class="form px-4">
 
-                             <!-- Button trigger modal -->
+                             <!-- Button trigger modal ajout auto -->
                              <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addpaie"><i class="bi bi-plus-lg"></i>Ajouter
                              </button>
-                             <!-- Modal -->
+                             <!-- Modal ajout auto -->
                              <div class="modal fade" id="addpaie" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                  <div class="modal-dialog salaire">
                                  <div class="modal-content">
@@ -38,15 +38,49 @@
                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                      </div>
                                      <div class="modal-body">
-                                         <form action="">
-                                             <input type="text" placeholder="Nom facture" class="form-control" required><br>
-                                             <label for="">Date réception</label><br>
-                                             <input type="date" class="form-control" required><br>
-                                             <label for="">Délais paiement</label>
-                                             <input type="date"  class="form-control" required><br>
-                                             <input type="number"  placeholder="Montant" class="form-control" required><br>
+                                         <form (ngSubmit) ="OnRegistFacAut()">
+
+                                            <input type="text" placeholder="Nom facture" class="form-control"  name="nomfacture" [(ngModel)] = "facture.nomsociete" [ngModelOptions]="{standalone:true}" required minlength="4" #Anomsocietevr="ngModel" [ngClass]="
+                                            {'is-invalid':Anomsocietevr.touched && !Anomsocietevr.valid}">
+                                            <!-- ----------------alerts----------- -->
+                                            <div *ngIf='Anomsocietevr.getError("required")' class="invalid-feedback" role="alert">
+                                                Champs requis
+                                              </div>
+                                              <div *ngIf='Anomsocietevr.getError("minlength")' class="invalid-feedback" role="alert">
+                                             ce champ contietn au moin 4 caractères
+                                              </div><br>
+
+                                            <label for="">Date réception</label><br>
+                                            <input type="date" class="form-control"  name="daterecp" [(ngModel)] = "facture.date_reception" [ngModelOptions]="{standalone:true}" required #Adaterecepvr="ngModel" [ngClass]="
+                                            {'is-invalid':Adaterecepvr.touched && !Adaterecepvr.valid}">
+                                            <!-- ----------------alerts----------- -->
+                                            <div *ngIf='  Adaterecepvr.getError("required")' class="invalid-feedback" role="alert">
+                                                Champs requis
+                                              </div><br>
+
+                                            <label for="">Date paiement:</label>
+                                            <input type="date"  class="form-control" name="delai" [(ngModel)] = "facture.date_paiement" [ngModelOptions]="{standalone:true}" required  #Apamvr="ngModel" [ngClass]="
+                                            {'is-invalid':Apamvr.touched && !Apamvr.valid}">
+                                            <!-- ----------------alerts----------- -->
+                                            <div *ngIf='Apamvr.getError("required")' class="invalid-feedback" role="alert">
+                                                Champs requis
+                                              </div><br>
+                                              
+
+                                            <input type="number" placeholder="Montant" class="form-control"  name="montatant" [(ngModel)] = "facture.montant" [ngModelOptions]="{standalone:true}" required  #Amontantvr="ngModel" [ngClass]="
+                                            {'is-invalid':Amontantvr.touched && !Amontantvr.valid}">
+                                            <!-- ----------------alerts----------- -->
+                                            <div *ngIf='Amontantvr.getError("required")' class="invalid-feedback" role="alert">
+                                                Champs requis
+                                              </div><br>
+
                                              <button type="reset" class="btn btn-danger">Annuler</button>
-                                             <button type="submit" class="btn btn-success">Valider</button>
+
+                                             <button type="submit" class="btn btn-success" disabled class="btn btn-dark btn-block"
+                                             *ngIf='Anomsocietevr.getError("required") || Anomsocietevr.getError("minlength") || Adaterecepvr.getError("required") || Apamvr.getError("required") || Amontantvr.getError("required")' 
+                                             type="submit">Valider</button>
+
+                                             <button type="submit" data-bs-dismiss="modal" class="btn btn-success"  *ngIf='!Anomsocietevr.getError("required") && !Anomsocietevr.getError("minlength") && !Adaterecepvr.getError("required") && !Apamvr.getError("required") && !Amontantvr.getError("required")'>Valider</button>
                                          </form>
                                      </div>
                                  </div>
@@ -90,10 +124,11 @@
                                                 </div>
                                             </div>
                                             
-                                            <!-- Button trigger modal 2-->
-                                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModa"><i class="bi bi-pencil-square"></i>
+                                            <!-- Button trigger modal modif auto-->
+                                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModa">
+                                                <i class="bi bi-pencil-square"></i>
                                             </button>
-                                            <!-- Modal 2-->
+                                            <!-- Modal modif auto-->
                                             <div class="modal fade" id="exampleModa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog salaire">
                                                 <div class="modal-content">
@@ -102,14 +137,50 @@
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <form action="">
-                                                            <input type="text" placeholder="Nom facture" class="form-control" required><br>
+
+                                                        <form (ngSubmit) ="OnModifFacAut()">
+
+                                                            <input type="text" placeholder="Nom facture" class="form-control" [(ngModel)] = "facture.nomsociete" [ngModelOptions]="{standalone:true}" required minlength="4" #nomfcvr="ngModel" [ngClass]="
+                                                            {'is-invalid':nomfcvr.touched && !nomfcvr.valid}">
+                                                            <!-- ----------------alerts----------- -->
+                                                            <div *ngIf='nomfcvr.getError("required")' role="alert" class="invalid-feedback">
+                                                                Remplir ce champs!
+                                                            </div>
+                  <div *ngIf='nomfcvr.getError("minlength")'  role="alert" class="warning-feedback">
+                    ce champs a au moins 1 lettres!
+                  </div>
+                                                            <br>
+
                                                             <label for="">Date réception</label><br>
-                                                            <input type="date" class="form-control" required><br>
+                                                            <input type="date" class="form-control" [(ngModel)] = "facture.date_reception" [ngModelOptions]="{standalone:true}" required minlength="4" #Arecepvr="ngModel" [ngClass]="
+                                                            {'is-invalid':Arecepvr.touched && !Arecepvr.valid}">
+                                                            <!-- ----------------alerts----------- -->
+                  <div *ngIf='Arecepvr.getError("required")'  role="alert" class="invalid-feedback">
+                    Remplir ce champs!
+                  </div>
+                                                            <br>
+
                                                             <label for="">Délais paiement</label>
-                                                            <input type="date"  class="form-control" required><br>
-                                                            <input type="number" placeholder="Montant" class="form-control" required><br>
-                                                            <button type="submit" class="btn btn-success">Valider</button>
+                                                            <input type="date"  class="form-control" [(ngModel)] = "facture.date_paiement" [ngModelOptions]="{standalone:true}" required minlength="4" #Apaimvr="ngModel" [ngClass]="
+                                                            {'is-invalid':Apaimvr.touched && !Apaimvr.valid}">
+                                                            <!-- ----------------alerts----------- -->
+                  <div *ngIf='Apaimvr.getError("required")'  role="alert" class="invalid-feedback">
+                    Remplir ce champs!
+                  </div>
+                                                            <br>
+
+                                                            <input type="number" placeholder="Montant" class="form-control" [(ngModel)] = "facture.montant" [ngModelOptions]="{standalone:true}" required  #Amontvr="ngModel" [ngClass]="
+                                                            {'is-invalid':Amontvr.touched && !Amontvr.valid}">
+                                                            <!-- ----------------alerts----------- -->
+                  <div *ngIf='Amontvr.getError("required")'  role="alert" class="invalid-feedback">
+                    Remplir ce champs!
+                  </div>
+                                                            <br>
+
+                                                            <button disabled
+                                                            *ngIf='nomfcvr.getError("minlength") || nomfcvr.getError("required") || Arecepvr.getError("required") || Apaimvr.getError("required") || Amontvr.getError("required")' type="submit" class="btn btn-primary">Valider</button>
+                                                            <button 
+                                                            *ngIf='!nomfcvr.getError("minlength") && !nomfcvr.getError("required") && !Arecepvr.getError("required") && !Apaimvr.getError("required") && !Amontvr.getError("required")' type="submit" class="btn btn-primary" data-bs-dismiss="modal">Valider</button>
                                                         </form>
                                                     </div>
                                                 </div>
@@ -134,10 +205,10 @@
 
                     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                         <div class="form px-4 ">
-                             <!-- Button trigger modal ajouter-->
+                             <!-- Button trigger modal ajouter manu-->
                              <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addpaieman"><i class="bi bi-plus-lg"></i>Ajouter
                              </button>
-                             <!-- Modal ajouter -->
+                             <!-- Modal ajouter manu -->
                              <div class="modal fade" id="addpaieman" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                  <div class="modal-dialog salaire">
                                  <div class="modal-content">
@@ -147,6 +218,7 @@
                                      </div>
                                      <div class="modal-body">
                                          <form role="form" (ngSubmit) ="OnRegistFacManuel()">
+
                                              <input type="text" placeholder="Nom facture" class="form-control"  name="nomfacture" [(ngModel)] = "facture.nomsociete" [ngModelOptions]="{standalone:true}" required minlength="4" #nomsocietevr="ngModel" [ngClass]="
                                              {'is-invalid':nomsocietevr.touched && !nomsocietevr.valid}"><br>
                                              <!-- ----------------alerts----------- -->
@@ -154,11 +226,21 @@
                                                  Champs requis
                                                </div>
                                                <div *ngIf='nomsocietevr.getError("minlength")' class="invalid-feedback" role="alert">
-                                                Nombre de caractère minimum non atteint
+                                              ce champ contietn au moin 4 caractères
                                                </div>
 
+                                     <input type="text" placeholder="Numero facture" class="form-control"  name="nomfacture" [(ngModel)] = "facture.numero" [ngModelOptions]="{standalone:true}" required minlength="4" #numerovr="ngModel" [ngClass]="
+                                     {'is-invalid':numerovr.touched && !numerovr.valid}"><br>
+                                     <!-- ----------------alerts----------- -->
+                                     <div *ngIf='numerovr.getError("required")' class="invalid-feedback" role="alert">
+                                         Champs requis
+                                       </div>
+                                       <div *ngIf='numerovr.getError("minlength")' class="invalid-feedback" role="alert">
+                                      ce champ contient au moins 4 caractères
+                                       </div>
+
                                              <label for="">Date réception</label><br>
-                                             <input type="date" class="form-control"  name="daterecp" [(ngModel)] = "facture.date_reception" [ngModelOptions]="{standalone:true}" required #daterecepvr="ngModel" [ngClass]="
+                                             <input type="date" class="form-control"  name="daterecp" [(ngModel)] = "facture.date_reception" [ngModelOptions]="{standalone:true}" required max="n" #daterecepvr="ngModel" [ngClass]="
                                              {'is-invalid':daterecepvr.touched && !daterecepvr.valid}"><br>
                                              <!-- ----------------alerts----------- -->
                                              <div *ngIf='  daterecepvr.getError("required")' class="invalid-feedback" role="alert">
@@ -174,23 +256,20 @@
                                                </div>
                                                
 
-                                             <input type="number" placeholder="Montant" class="form-control"  name="montatant" [(ngModel)] = "facture.montant" [ngModelOptions]="{standalone:true}" required number #montantvr="ngModel" [ngClass]="
+                                             <input type="number" placeholder="Montant" class="form-control"  name="montatant" [(ngModel)] = "facture.montant" [ngModelOptions]="{standalone:true}" required  #montantvr="ngModel" [ngClass]="
                                              {'is-invalid':montantvr.touched && !montantvr.valid}"><br>
                                              <!-- ----------------alerts----------- -->
                                              <div *ngIf='montantvr.getError("required")' class="invalid-feedback" role="alert">
                                                  Champs requis
                                                </div>
-                                               <div *ngIf='montantvr.getError("number")' class="invalid-feedback" role="alert">
-                                               Ce champ doit contenir des nombres uniquement.
-                                               </div>
 
                                              <button type="reset" class="btn btn-danger">Annuler</button>
 
                                              <button type="submit" class="btn btn-success" disabled class="btn btn-dark btn-block"
-                                             *ngIf='nomsocietevr.getError("required") || nomsocietevr.getError("minlength") || daterecepvr.getError("required") || delaivr.getError("required") || montantvr.getError("required") || montantvr.getError("number")' 
+                                             *ngIf='nomsocietevr.getError("required") || nomsocietevr.getError("minlength") || daterecepvr.getError("required") || delaivr.getError("required") || montantvr.getError("required") || numerovr.getError("required") || numerovr.getError("minlength")' 
                                              type="submit">Valider</button>
 
-                                             <button type="submit" class="btn btn-success"  *ngIf='!nomsocietevr.getError("required") && !nomsocietevr.getError("minlength") && !daterecepvr.getError("required") && !delaivr.getError("required") && !montantvr.getError("required") && !montantvr.getError("number")'>Valider</button>
+                                             <button type="submit" data-bs-dismiss="modal" class="btn btn-success"  *ngIf='!nomsocietevr.getError("required") && !nomsocietevr.getError("minlength") && !daterecepvr.getError("required") && !delaivr.getError("required") && !montantvr.getError("required") && !numerovr.getError("required") && !numerovr.getError("minlength")'>Valider</button>
                                          </form>
                                      </div>
                                  </div>
@@ -201,7 +280,8 @@
                                     <thead>
                                         <tr>
                                             <th scope="col">No</th>
-                                            <th scope="col">Nom factures</th>
+                                            <th scope="col">Nom facture</th>
+                                            <th scope="col">numéro facture</th>
                                             <th scope="col">Date réception</th>
                                             <th scope="col">Délais paiement</th>
                                             <th scope="col">Dates paiement</th>
@@ -210,13 +290,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <td>@mdo</td>
+                                        <tr *ngFor="let facture of factures">
+                                        <!-- <th scope="row">1</th> -->
+                                        <td>{{facture.nomsociete}}</td>
+                                        <td>{{facture.numero}}</td>
+                                        <td>{{facture.date_reception}}</td>
+                                        <td>{{facture.delai}}</td>
+                                        <td>{{facture.date_paiement}}</td>
+                                        <td>{{facture.montant}}</td>
                                         <td>
                                             <!-- Button trigger modal 1-->
                                             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exleModal">
@@ -236,12 +317,12 @@
                                                 </div>
                                             </div>
                                             
-                                            <!-- Button trigger modal 2-->
+                                            <!-- Button trigger modal modif manu-->
                                             <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#examp"><i class="bi bi-pencil-square"></i>
                                             </button>
                                             
                                             <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-                                            <!-- Modal 2-->
+                                            <!-- Modal modif manu-->
                                             <div class="modal fade" id="examp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog salaire">
                                                 <div class="modal-content">
@@ -250,14 +331,49 @@
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <form action="">
-                                                            <input type="text" placeholder="Nom facture" class="form-control" required><br>
+                                                        <form (ngSubmit) ="OnModifFacManuel()">
+
+                                                            <input type="text" placeholder="Nom facture" class="form-control" [(ngModel)] = "facture.nomsociete" [ngModelOptions]="{standalone:true}" required minlength="4" #nomcvr="ngModel" [ngClass]="
+                                                            {'is-invalid':nomcvr.touched && !nomcvr.valid}">
+                                                            <!-- ----------------alerts----------- -->
+                                                            <div *ngIf='nomcvr.getError("required")' role="alert" class="invalid-feedback">
+                                                                Remplir ce champs!
+                                                            </div>
+                  <div *ngIf='nomcvr.getError("minlength")'  role="alert" class="warning-feedback">
+                    ce champs a au moins 1 lettres!
+                  </div>
+                                                            <br>
+
                                                             <label for="">Date réception</label><br>
-                                                            <input type="date" class="form-control" required><br>
+                                                            <input type="date" class="form-control" [(ngModel)] = "facture.date_reception" [ngModelOptions]="{standalone:true}" required minlength="4" #recepvr="ngModel" [ngClass]="
+                                                            {'is-invalid':recepvr.touched && !recepvr.valid}">
+                                                            <!-- ----------------alerts----------- -->
+                  <div *ngIf='recepvr.getError("required")'  role="alert" class="invalid-feedback">
+                    Remplir ce champs!
+                  </div>
+                                                            <br>
+
                                                             <label for="">Délais paiement</label>
-                                                            <input type="date"  class="form-control" required><br>
-                                                            <input type="number" placeholder="Montant" class="form-control" required><br>
-                                                            <button type="submit" class="btn btn-success">Valider</button>
+                                                            <input type="date"  class="form-control" [(ngModel)] = "facture.date_paiement" [ngModelOptions]="{standalone:true}" required minlength="4" #paimvr="ngModel" [ngClass]="
+                                                            {'is-invalid':paimvr.touched && !paimvr.valid}">
+                                                            <!-- ----------------alerts----------- -->
+                  <div *ngIf='paimvr.getError("required")'  role="alert" class="invalid-feedback">
+                    Remplir ce champs!
+                  </div>
+                                                            <br>
+
+                                                            <input type="number" placeholder="Montant" class="form-control" [(ngModel)] = "facture.montant" [ngModelOptions]="{standalone:true}" required  #montvr="ngModel" [ngClass]="
+                                                            {'is-invalid':montvr.touched && !montvr.valid}">
+                                                            <!-- ----------------alerts----------- -->
+                  <div *ngIf='montvr.getError("required")'  role="alert" class="invalid-feedback">
+                    Remplir ce champs!
+                  </div>
+                                                            <br>
+
+                                                            <button disabled
+                                                            *ngIf='nomcvr.getError("minlength") || nomcvr.getError("required") || recepvr.getError("required") || paimvr.getError("required") || montvr.getError("required")' type="submit" class="btn btn-primary">Valider</button>
+                                                            <button 
+                                                            *ngIf='!nomcvr.getError("minlength") && !nomcvr.getError("required") && !recepvr.getError("required") && !paimvr.getError("required") && !montvr.getError("required")' type="submit" class="btn btn-primary" data-bs-dismiss="modal">Valider</button>
                                                         </form>
                                                     </div>
                                                 </div>

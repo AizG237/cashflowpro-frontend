@@ -1,0 +1,137 @@
+body{
+    font-size: 14px;
+    background-color: #000;
+}
+
+.main{
+width: 100%;
+height: 100%;
+}
+.maincontent{
+/* background-color:#e1e9ff ; */
+/* padding:5px 12px; */
+margin:auto;
+width: 100%;
+}
+  .maincontent .maintitle{
+    /* background-color:#354e9198; */
+    margin:auto;
+    width: 100%;
+    text-align: center;
+    padding: 10px 20px;
+  }
+  .maintitle h1{
+    color: #519259;
+    margin:0;
+    line-height: 20px;
+  }
+  .card{
+    --bs-card-bg:#fff;
+    min-height: 400px;
+    border:none;
+    width: 100%;
+    overflow-y: hidden;
+    position: relative;
+    margin:5% auto;
+    padding-bottom: 20px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+  .nav{
+    --bs-nav-link-hover-color:#064635;
+    --bs-nav-link-color:#064635;
+    font-weight: 500;
+  }
+  .nav-pills{
+    display:table !important;
+    width:100%;
+    cursor: default;
+  }
+  .nav-pills .nav-link.active{
+    background-color: #064635;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+  .nav-pills .nav-link {
+      border-radius: 0px;
+          border-bottom: 1px solid #064635;
+  }
+  .nav-item{
+        display: table-cell;
+         background: #F0BB62;     
+  }
+  .form{
+    padding: 10px;
+    overflow-x: scroll;
+   min-height: 300px;
+   height: 100%;
+  }
+  .table-bordered{
+    width: 100%;
+    min-height: 300px;
+    overflow-x: scroll;
+  }
+  thead th{
+    min-width: 170px;
+    color: #064635;
+    background-color: #519259a8;
+  }
+  .btn{
+    margin: 5px;
+  }
+  .btn-primary{
+    background-color: #3F5AA6;
+    border: none;
+    --bs-btn-active-bg:#354e91;
+}
+.btn-primary:hover{
+    background-color: #354e91;
+}
+.btn-success{
+    background-color: #810244;
+    border: none;
+    --bs-btn-active-bg:#6d063b;
+}
+.btn-success:hover{
+    background-color: #6d063b;
+}
+  .verif{
+    width: 300px;
+  }
+  .salaire{
+    width: 400px;
+  }
+  .modal-header{
+    background-color:#064635;
+    color: #fff;
+}
+.modal-body .btn-primary{
+    background-color:#002F1B ;
+    color: #fff;
+    border: none;
+    --bs-btn-active-border-color:#01180e;
+    margin: 5px;
+}
+.modal-body .btn-primary:hover{
+    background-color:#01180e ;
+}
+  .modal-body input{
+    border-radius: 5px;
+    margin: 0 auto 12px 5px;
+    width: 80%;
+  }
+  form input:focus{
+    box-shadow: none;
+  }
+  .modal-body label{
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: 10px;
+  }
+  .form-check-input{
+    border: 2px solid #b8bbba;
+    font-size: 25px;
+  }
+  th{
+    min-width: 4%;
+  }

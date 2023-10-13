@@ -1,0 +1,61 @@
+<section class="main">
+    <div class="maincontent">
+        <div class="formul">
+            <div class="titleform">
+                <h2>Faire un don</h2>
+            </div>
+            <!-- --------------------------error--------------------------- -->
+           
+          <!-- <div class="alert alert-success" role="alert" *ngIf="successMessage" ></div> -->
+          <div class="alert alert-danger" role="alert" *ngIf="errorMessage" >{{errorMessage}}</div>
+          
+            <form (ngSubmit)= " OnAddon()">
+                <label for="">Montant:</label><br>
+                <input type="number" min="0" placeholder="xxxxxx " class="form-control" [(ngModel)]= "adon.montant" [ngModelOptions]="{standalone:true}"  required #montt="ngModel" [ngClass]="
+                {'is-invalid':montt.touched && !montt.valid}">
+                <!-- ----------------alerts----------- -->
+                  <div *ngIf='montt.getError("required")'  role="alert" class="invalid-feedback">
+                    Remplir ce champs!
+                  </div>
+
+                <label for="">Motif:</label><br>
+                <input type="text" placeholder="Bons service" class="form-control"  [(ngModel)]= "adon.motif" [ngModelOptions]="{standalone:true}"  required #motif="ngModel" maxlength="100" [ngClass]="
+                {'is-invalid':motif.touched && !motif.valid}">
+                <!-- ----------------alerts----------- -->
+                  <div *ngIf='motif.getError("required")'  role="alert" class="invalid-feedback">
+                    Remplir ce champs!
+                  </div>
+
+                <label for="">Compte destinaire:</label>
+                <select class="form-select" aria-label="Default select example"  [(ngModel)]= "adon.destinataire" [ngModelOptions]="{standalone:true}"  required #desti="ngModel" [ngClass]="
+                {'is-invalid':desti.touched && !desti.valid}">
+                    <option selected>001</option>
+                    <option value="1">002</option>
+                    <option value="2">003</option>
+                    <option value="3">004</option>
+                  </select>
+                  <!-- ----------------alerts----------- -->
+                  <div *ngIf='desti.getError("required")'  role="alert" class="invalid-feedback">
+                    Remplir ce champs!
+                  </div>
+                  <br>
+                <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                <button disabled
+                                *ngIf=' desti.getError("required")|| montt.getError("required") || motif.getError("required") ' type="submit" class="btn btn-primary">Valider</button>
+
+                                <button 
+                                *ngIf=' !desti.getError("required") && !montt.getError("required") && !motif.getError("required") ' type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-dismiss="modal">Valider</button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content"class="alert alert-success" role="alert">
+                                        {{successMessage}}
+                                      </div>
+                                  </div>
+                                </div>
+                                
+            </form>
+        </div>
+    </div>
+</section>

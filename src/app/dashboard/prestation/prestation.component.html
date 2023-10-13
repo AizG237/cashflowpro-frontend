@@ -1,0 +1,146 @@
+<p>prestation works!</p>
+<section class="main">
+    <div class="maincontent">
+        <div class="maintitle">
+            <h2>Plan d'investissement</h2>
+        </div>
+        <div class="bloctables">
+            <div class="card">
+
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item text-center">
+                      <a class="nav-link active btl" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Liste des Prestations</a>
+                    </li>
+                    <li class="nav-item text-center">
+                      <a class="nav-link btr" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">
+                        Formulaire d'ajout de Prestations
+                      </a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                        <div class="form px-4 ">
+
+                            <table class="table table-bordered" data-toggle="table" data-search="true" data-pagination="true">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">Libellé</th>
+                                        <th scope="col">Domaine</th>
+                                        <th scope="col">Nom projet mère</th>
+                                        <th scope="col">Montant à payer</th>
+                                        <th scope="col">Montant payé</th>
+                                        <th scope="col">Date livraison</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                        <td>@mdo</td>
+                                        <td>@mdo</td>
+                                        <td>@mdo</td>
+                                        </tr>
+                                        <!-- <tr>
+                                        <th scope="row">3</th>
+                                        <td colspan="2">Larry the Bird</td>
+                                        <td>@twitter</td>
+                                        </tr> -->
+                                    </tbody>
+                                    </table>
+                            </table>
+
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        <div class="form px-4 ">
+        
+                            <div class="mainform">
+                                <div class="formul">
+                                    <form role="form" (ngSubmit)= "OnAddPresta()">
+                                        <label for="">Libellé:</label><br>
+                                        <input type="text" class="form-control"name="nomactif" [(ngModel)] = "ajpres.libelle" [ngModelOptions]="{standalone:true}" required minlength="3" maxlength="30"  #libel="ngModel" [ngClass]="
+                                        {'is-invalid':libel.touched && !libel.valid}">
+                                         <!-- ----------------alerts----------- -->
+                                        <div *ngIf='libel.getError("required")' class="invalid-feedback" role="alert">
+                                            Champs requis
+                                          </div>
+                                          <div *ngIf='libel.getError("minlength")' class="invalid-feedback" role="alert">
+                                            ce champ contient au moins 3 caractères 
+                                          </div>
+                            
+                                        <label for="">Domaine:</label><br>
+                                        <input type="text" class="form-control"name="nomactif" [(ngModel)] = "ajpres.Domaine" [ngModelOptions]="{standalone:true}" required minlength="3" maxlength="30"  #domainn="ngModel" [ngClass]="
+                                        {'is-invalid':domainn.touched && !domainn.valid}">
+                                        <!-- ----------------alerts----------- -->
+                                        <div *ngIf='domainn.getError("required")' class="invalid-feedback" role="alert">
+                                            Champs requis
+                                          </div>
+                                          <div *ngIf='  domainn.getError("minlength")' class="invalid-feedback" role="alert">
+                                            ce champ contient au moins 3 caractères 
+                                          </div>
+
+                                        <label for="">Nom projet mère:</label><br>
+                                        <input type="text" class="form-control"name="nomactif" [(ngModel)] = "ajpres.nom_projet" [ngModelOptions]="{standalone:true}" required minlength="3" maxlength="30"  #nompro="ngModel" [ngClass]="
+                                        {'is-invalid':nompro.touched && !nompro.valid}">
+
+                                        <!-- ----------------alerts----------- -->
+                                        <div *ngIf='nompro.getError("required")' class="invalid-feedback" role="alert">
+                                            Champs requis
+                                          </div>
+                                          <div *ngIf='  nompro.getError("minlength")' class="invalid-feedback" role="alert">
+                                            ce champ contient au moins 3 caractères 
+                                          </div>
+
+                                        <label for="">Montant à payer:</label><br>
+                                        <input type="number" class="form-control" name="nombroker" [(ngModel)] = "ajpres.montant_total" [ngModelOptions]="{standalone:true}" required minlength="3" #montot="ngModel" [ngClass]="
+                                        {'is-invalid':montot.touched &&  !montot.valid}">
+
+                                        <!-- ----------------alerts----------- -->
+                                        <div *ngIf='montot.getError("required")' class="invalid-feedback" role="alert">
+                                            Champs requis
+                                          </div>
+
+                                        <label for="">Montant payé:</label><br>
+                                        <input type="number" class="form-control" name="montantmin" [(ngModel)] = "ajpres.montant_paye" [ngModelOptions]="{standalone:true}" required number #montpy="ngModel" [ngClass]="
+                                        {'is-invalid':montpy.touched && !montpy.valid}">
+                                        <!-- ----------------alerts----------- -->
+                                        <div *ngIf='montpy.getError("required")' class="invalid-feedback" role="alert">
+                                            Champs requis
+                                          </div>
+
+                                        <label for="">Date livraison:</label><br>
+                                        <input type="date" class="form-control" name="dureemin" [(ngModel)] = "ajpres.Date_livraison" [ngModelOptions]="{standalone:true}" required min="2023-10-11" number #dateliv="ngModel" [ngClass]="
+                                        {'is-invalid':dateliv.touched && !dateliv.valid}">
+
+                                        <!-- ----------------alerts----------- -->
+                                        <div *ngIf='dateliv.getError("required")' class="invalid-feedback" role="alert">
+                                            Champs requis
+                                          </div>
+
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+
+                                        <button type="submit" class="btn btn-success" disabled class="btn btn-dark btn-block"
+                                        *ngIf='libel.getError("required") || libel.getError("minlength") || dateliv.getError("required") || domainn.getError("required") || domainn.getError("minlength") || nompro.getError("required") || nompro.getError("minlength") || montot.getError("required") || montpy.getError("required")' 
+                                        type="submit">Valider</button>
+
+                                        <button type="submit" class="btn btn-success"  class="btn btn-dark btn-block"
+                                        *ngIf='!libel.getError("required") && !libel.getError("minlength") && !dateliv.getError("required") &&! domainn.getError("required") &&! domainn.getError("minlength") &&! nompro.getError("required") &&! nompro.getError("minlength") &&! montot.getError("required") && !montot.getError("required")'  >Valider</button>
+                                    </form>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                </div>
+              
+            </div>
+        </div>
+    </div>
+</section>

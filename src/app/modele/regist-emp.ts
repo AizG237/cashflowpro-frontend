@@ -5,7 +5,7 @@ export class RegistEmp {
     password!:string;
     datenaiss!:Date;
     telephone!:number;
-    confpass!: string;
+    //confpass!: string;
     matricule!:string;
     salaire!:number;
 }

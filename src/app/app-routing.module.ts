@@ -14,6 +14,13 @@ import{CashfoncComponent} from './dashboard/cashfonc/cashfonc.component';
 import{SantefinComponent} from './dashboard/santefin/santefin.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { GereinvComponent } from './dashboard/gereinv/gereinv.component';
+import { DonsComponent } from './dashboard/dons/dons.component';
+import { PaiemntComponent } from './dashboard/paiemnt/paiemnt.component';
+import { GerecmpjnComponent } from './dashboard/gerecmpjn/gerecmpjn.component';
+import { GerecmpmdComponent } from './dashboard/gerecmpmd/gerecmpmd.component';
+import { TracabiliteComponent } from './dashboard/tracabilite/tracabilite.component';
+import { PrestationComponent } from './dashboard/prestation/prestation.component';
+
 
 
 const routes: Routes = [
@@ -28,6 +35,10 @@ const routes: Routes = [
   {path:'cmptemp' ,component : CmptempComponent},
   {path:'cashfonc',component: CashfoncComponent},
   {path:'santefin',component: SantefinComponent},
+  {path:'don',component: DonsComponent},
+  {path:'paiemnt',component: PaiemntComponent},
+  {path:'cmptcli',component: GerecmpjnComponent},
+  {path:'cmptemplo',component: GerecmpmdComponent},
 
   {path:'dashboard',component: DashboardComponent,
  children:[
@@ -40,6 +51,12 @@ const routes: Routes = [
   {path:'cmptemp' ,component : CmptempComponent},
   {path:'cashfonc',component: CashfoncComponent},
   {path:'santefin',component: SantefinComponent},
+  {path:'don',component: DonsComponent},
+  {path:'paiemnt',component: PaiemntComponent},
+  {path:'cmptcli',component: GerecmpjnComponent},
+  {path:'cmptemplo',component: GerecmpmdComponent},
+  {path:'tracabilite',component: TracabiliteComponent},
+  {path:'prestation',component: PrestationComponent},
 
  ]
 },

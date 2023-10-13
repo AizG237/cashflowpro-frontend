@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { PlanInvest } from 'src/app/modele/plan-invest';
-import { PlanInvestServiceService } from 'src/app/service/plan-invest-service.service';
-import { TokenProviderService } from 'src/app/service/token-provider.service';
+import { Router } from '@angular/router';
+import { PlanInvest } from '../../modele/plan-invest';
+import { PlanInvestServiceService } from '../../service/plan-invest-service.service';
+// import { TokenProviderService } from 'src/app/service/token-provider.service';
 
 @Component({
   selector: 'app-gerepi',
@@ -10,13 +11,22 @@ import { TokenProviderService } from 'src/app/service/token-provider.service';
 })
 export class GerepiComponent {
   invest = new PlanInvest();
-constructor(private planInvestService : PlanInvestServiceService){}
+constructor(private planInvestService : PlanInvestServiceService, private router:Router){}
 OnAddPlanInvest():void{
 this.planInvestService.addPlanInvest(this.invest).subscribe((res:any) =>{
   console.log(" Test new PLAN INVESTISSEMENT OK"+res);
 
 });
 
+}
+OnAccess():void{
+  const role = window.localStorage.getItem("role")
+  const role2 = window.localStorage.getItem("role")
+if (role !="DIRECTEUR" || role2 != "RESPPONSABLE") {
+  alert("VOUS N'ETES PAS AUTORISE A ACCEDER A CETTE PAGE");
+  window.localStorage.clear();
+  this.router.navigate(['/'])
+}
 }
 
 }

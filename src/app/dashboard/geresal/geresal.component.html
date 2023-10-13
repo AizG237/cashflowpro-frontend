@@ -35,10 +35,10 @@
                                     <tbody>
                                         <tr>
                                         <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <td>@mdo</td>
+                                        <td>Fono</td>
+                                        <td>Yannick</td>
+                                        <td>Developpeur</td>
+                                        <td>100.000</td>
                                         <td>
                                             <!-- Button supprim-->
                                             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#suppri">
@@ -70,9 +70,18 @@
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                     <div class="modal-body">
-                                                        <form>
-                                                            <input type="number"  placeholder="Montant" class="form-control" required><br>
-                                                            <button type="submit" class="btn btn-success">Valider</button>
+                                                        <form (ngSubmit)= " Onaddsal()">
+                                                            <input type="number"  placeholder="Montant" class="form-control" [(ngModel)]= "adsal.salaire" [ngModelOptions]="{standalone:true}"  required #salvr="ngModel" [ngClass]="
+                                                            {'is-invalid':salvr.touched && !salvr.valid}">
+                                                            <!-- ----------------alerts----------- -->
+                  <div *ngIf='salvr.getError("required")'  role="alert" class="invalid-feedback">
+                    Remplir ce champs!
+                  </div>
+                                                            <br>
+                                                            <button disabled
+                                                            *ngIf=' salvr.getError("required")' type="submit" class="btn btn-primary">Valider</button>
+                                                            <button 
+                                                            *ngIf=' !salvr.getError("required")' type="submit" class="btn btn-primary" data-bs-dismiss="modal">Valider</button>
                                                         </form>
                                                     </div>
                                                 </div>
@@ -129,10 +138,10 @@
                                     <tbody>
                                         <tr>
                                         <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <td>@mdo</td>
+                                        <td>OWONA</td>
+                                        <td>Sylvain</td>
+                                        <td>Analyste concepteur</td>
+                                        <td>150.000</td>
                                         <td>
                                             <!-- Button trigger modal 1-->
                                             <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleMdal">Réactiver

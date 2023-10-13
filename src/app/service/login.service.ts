@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { enviroment } from 'src/assets/enviroment/enviroment.dev';
+// import { enviroment } from 'src/assets/enviroment/enviroment.dev';
 import{HttpClient, HttpHeaders} from "@angular/common/http"
 import { AuthRequest } from '../modele/auth-request';
 @Injectable({

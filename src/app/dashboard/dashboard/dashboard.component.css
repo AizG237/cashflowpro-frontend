@@ -12,7 +12,7 @@
   width: 78px;
 }
 .sidebar .logo-details {
-  height: 80px;
+  height: 45px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -45,7 +45,7 @@
 .logo_name .logo{
   margin:0;
     width: 60px;
-    background-color: #2697FF;
+    /* background-color: #2697FF; */
     display: inline-block;
     vertical-align: top;
 }
@@ -92,9 +92,22 @@
   color: #F0BB62;
   font-size: 15px;
   font-weight: 400;
+  width: 100%;
+  text-align: left;
   white-space: nowrap;
 }
-
+.log_out button{
+  width: 100%;
+  text-align: left;
+  display: flex;
+  color: #F0BB62;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+}
+.log_out button i{
+  margin-left: -8px;
+}
 .sidebar .nav-links .log_out {
   /* position: absolute;
   bottom: 0; */
