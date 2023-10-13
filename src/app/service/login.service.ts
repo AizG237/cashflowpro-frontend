@@ -9,6 +9,8 @@ export class LoginService {
     //appURL = enviroment.baseUrl
   constructor(private http : HttpClient) { }
   login(authRequest : AuthRequest){
+    
+
     const httpOptions ={
       headers: new HttpHeaders({
         "Content-type" : "application/json",
