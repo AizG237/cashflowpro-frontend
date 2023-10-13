@@ -23,7 +23,8 @@ import { DonsComponent } from './dashboard/dons/dons.component';
 import { PaiemntComponent } from './dashboard/paiemnt/paiemnt.component';
 import { TracabiliteComponent } from './dashboard/tracabilite/tracabilite.component';
 import { PrestationComponent } from './dashboard/prestation/prestation.component';
-import { MychartComponent } from './dashboard/mychart/mychart.component';
+// import { PlotlyModule, PlotlyService } from 'angular-plotly.js/public-api';
+
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { MychartComponent } from './dashboard/mychart/mychart.component';
     PaiemntComponent,
     TracabiliteComponent,
     PrestationComponent,
-    MychartComponent
+
+   
   ],
   imports: [
     BrowserModule,

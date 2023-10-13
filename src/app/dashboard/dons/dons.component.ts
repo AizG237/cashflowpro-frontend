@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { catchError, throwError } from 'rxjs';
 import { DonserviceService } from '../../service/donservice.service';
@@ -9,11 +9,18 @@ import { Donrequest } from '../../modele/donrequest';
   templateUrl: './dons.component.html',
   styleUrls: ['./dons.component.css']
 })
-export class DonsComponent {
+export class DonsComponent implements OnInit {
     adon = new Donrequest();
   constructor(private donserviceService : DonserviceService,private router: Router){}  
-  ngOnInit(): void{
- }
+
+  ngOnInit(){
+    const role = window.localStorage.getItem("role")
+    if(role !="CLIENT" ){
+      alert("ERREUR, VOUS N'AVEZ PAS LE DROIT D'ACCES A CETTE PAGE");
+      window.localStorage.clear();
+      this.router.navigate(['/']); 
+    }
+  }
   errorMessage:string = "";
   successMessage:string = "";
   OnAddon():void{

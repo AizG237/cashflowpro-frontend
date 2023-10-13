@@ -15,12 +15,13 @@ export class CmptempComponent {
   addr = new AdresseRequest();
 constructor(private creation : CreationEmplService,private adresseServiceService : AdresseServiceService, private router :  Router){}
   
-  OnAccess():void{
-    const role = window.localStorage.getItem("role")
-  if (role !="DIRECTEUR") {
-    alert("VOUS N'ETES PAS AUTORISE A ACCEDER A CETTE PAGE");
+
+ngOnInit(){
+  const role = window.localStorage.getItem("role")
+  if(role !="DIRECTEUR"){
+    alert("ERREUR, VOUS N'AVEZ PAS LE DROIT D'ACCES A CETTE PAGE");
     window.localStorage.clear();
-    this.router.navigate(['/'])
+    this.router.navigate(['/']); 
   }
 }
       OnCreateEmpl():void{

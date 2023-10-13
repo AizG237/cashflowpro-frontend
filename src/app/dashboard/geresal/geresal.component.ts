@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Salairerequest } from '../../modele/salairerequest';
 import { SalaireserviceService } from '../../service/salaireservice.service';
@@ -8,9 +8,18 @@ import { SalaireserviceService } from '../../service/salaireservice.service';
   templateUrl: './geresal.component.html',
   styleUrls: ['./geresal.component.css']
 })
-export class GeresalComponent {
+export class GeresalComponent implements OnInit {
   adsal: Salairerequest = new Salairerequest();
 constructor(private ajoutsalservice : SalaireserviceService ,private router : Router){}
+
+ngOnInit(){
+  const role = window.localStorage.getItem("role")
+  if(role !="DIRECTEUR"){
+    alert("ERREUR, VOUS N'AVEZ PAS LE DROIT D'ACCES A CETTE PAGE");
+    window.localStorage.clear();
+    this.router.navigate(['/']); 
+  }
+}
 Onaddsal():void{
   console.log('test',this.adsal);
   this.ajoutsalservice.ajoutsal(this.adsal).subscribe((res:any)=>{

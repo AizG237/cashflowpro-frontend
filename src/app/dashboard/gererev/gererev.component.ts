@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,14 +6,15 @@ import { Router } from '@angular/router';
   templateUrl: './gererev.component.html',
   styleUrls: ['./gererev.component.css']
 })
-export class GererevComponent {
+export class GererevComponent implements OnInit {
 constructor(private router : Router){}
-OnAccess():void{
+
+ngOnInit(){
   const role = window.localStorage.getItem("role")
-if (role =="CLIENT") {
-  alert("VOUS N'ETES PAS AUTORISE A ACCEDER A CETTE PAGE");
-  window.localStorage.clear();
-  this.router.navigate(['/'])
-}
+  if(role !="DIRECTEUR" && role !="RESPONSABLE" && role !="EMPLOYE"){
+    alert("ERREUR, VOUS N'AVEZ PAS LE DROIT D'ACCES A CETTE PAGE");
+    window.localStorage.clear();
+    this.router.navigate(['/']); 
+  }
 }
 }

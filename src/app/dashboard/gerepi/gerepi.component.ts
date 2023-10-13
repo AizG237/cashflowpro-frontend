@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PlanInvest } from '../../modele/plan-invest';
 import { PlanInvestServiceService } from '../../service/plan-invest-service.service';
@@ -9,9 +9,17 @@ import { PlanInvestServiceService } from '../../service/plan-invest-service.serv
   templateUrl: './gerepi.component.html',
   styleUrls: ['./gerepi.component.css']
 })
-export class GerepiComponent {
+export class GerepiComponent implements OnInit {
   invest = new PlanInvest();
 constructor(private planInvestService : PlanInvestServiceService, private router:Router){}
+ngOnInit(){
+  const role = window.localStorage.getItem("role")
+  if(role !="DIRECTEUR" && role !="RESPONSABLE"){
+    alert("ERREUR, VOUS N'AVEZ PAS LE DROIT D'ACCES A CETTE PAGE");
+    window.localStorage.clear();
+    this.router.navigate(['/']); 
+  }
+}
 OnAddPlanInvest():void{
 this.planInvestService.addPlanInvest(this.invest).subscribe((res:any) =>{
   console.log(" Test new PLAN INVESTISSEMENT OK"+res);

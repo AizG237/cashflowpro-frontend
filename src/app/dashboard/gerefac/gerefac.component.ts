@@ -21,8 +21,14 @@ export class GerefacComponent implements OnInit {
     private factureService: FactureserviceService,
     private router : Router
   ) {}
-  ngOnInit(): void {
-    this.OnListFacture()
+ 
+  ngOnInit(){
+    const role = window.localStorage.getItem("role")
+    if(role !="DIRECTEUR" && role !="RESPONSABLE"){
+      alert("ERREUR, VOUS N'AVEZ PAS LE DROIT D'ACCES A CETTE PAGE");
+      window.localStorage.clear();
+      this.router.navigate(['/']); 
+    }
   }
 
   OnAccess():void{

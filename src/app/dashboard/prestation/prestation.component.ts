@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Prestationrequest } from '../../modele/prestationrequest';
 import { PrestationserviceService } from '../../service/prestationservice.service';
 import { Router } from '@angular/router';
@@ -8,9 +8,18 @@ import { Router } from '@angular/router';
   templateUrl: './prestation.component.html',
   styleUrls: ['./prestation.component.css']
 })
-export class PrestationComponent {
+export class PrestationComponent implements OnInit {
   ajpres = new Prestationrequest();
 constructor(private prestationserviceService : PrestationserviceService,private router:Router){}
+
+ngOnInit(){
+  const role = window.localStorage.getItem("role")
+  if(role !="DIRECTEUR"){
+    alert("ERREUR, VOUS N'AVEZ PAS LE DROIT D'ACCES A CETTE PAGE");
+    window.localStorage.clear();
+    this.router.navigate(['/']); 
+  }
+}
 
 OnAddPresta():void{
 this.prestationserviceService.ajpresta(this.ajpres).subscribe((res:any) =>{
